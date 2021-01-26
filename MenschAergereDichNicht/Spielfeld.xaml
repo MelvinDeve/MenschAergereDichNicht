@@ -24,11 +24,13 @@
             <ColumnDefinition Width="409*"/>
             <ColumnDefinition Width="383*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="45" Margin="189,-6,0,0" VerticalAlignment="Top" Width="51"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
-        <Button Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Width="32" Height="54">
-            <Image Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
+        <Image Grid.Column="0" HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="0" HorizontalAlignment="Left" Height="44" Margin="92,269,0,0" VerticalAlignment="Top" Width="50"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
+        <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="198,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Image Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" />
         </Button>
+        <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="224,139,0,0" VerticalAlignment="Top" Width="100" Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
 
 
     </Grid>

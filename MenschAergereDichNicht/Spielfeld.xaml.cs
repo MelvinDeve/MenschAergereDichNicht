@@ -23,5 +23,11 @@ namespace MenschAergereDichNicht
         {
             InitializeComponent();
         }
+
+
+        private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
     }
 }

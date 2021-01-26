@@ -27,7 +27,8 @@ namespace MenschAergereDichNicht
 
         private void btnSpielStarten_Click(object sender, RoutedEventArgs e)
         {
-
+            Spielfeld spielfeld = new Spielfeld();
+            spielfeld.ShowDialog();
         }
 
        

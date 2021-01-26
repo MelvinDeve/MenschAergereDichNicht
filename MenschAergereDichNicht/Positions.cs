@@ -20,17 +20,17 @@ namespace MenschAergereDichNicht
         public const int yPos_9 = 314;
         public const int yPos_10 = 354;
 
-        public const int xPos_0 = 13;
-        public const int xPos_1 = 48;
-        public const int xPos_2 = 84;
-        public const int xPos_3 = 119;
-        public const int xPos_4 = 154;
-        public const int xPos_5 = 189;
-        public const int xPos_6 = 224;
-        public const int xPos_7 = 259;
-        public const int xPos_8 = 294;
-        public const int xPos_9 = 329;
-        public const int xPos_10 = 364;
+        public const int xPos_0 = 13+9;
+        public const int xPos_1 = 48 + 9;
+        public const int xPos_2 = 84 + 9;
+        public const int xPos_3 = 119 + 9;
+        public const int xPos_4 = 154 + 9;
+        public const int xPos_5 = 189 + 9;
+        public const int xPos_6 = 224 + 9;
+        public const int xPos_7 = 259 + 9;
+        public const int xPos_8 = 294 + 9;
+        public const int xPos_9 = 329 + 9;
+        public const int xPos_10 = 364 + 9;
     }
     class Positions
     {
