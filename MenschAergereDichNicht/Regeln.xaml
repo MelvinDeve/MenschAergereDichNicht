@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="Regeln" Height="450" Width="800">
     <Grid>
-        <Label Content="jfgsjg&#xD;&#xA;shkjsfh&#xD;&#xA;hsfksfh&#xD;&#xA;efka&#xD;&#xA;faekkaeg&#xD;&#xA;kaeg" HorizontalAlignment="Left" Height="214" Margin="216,83,0,0" VerticalAlignment="Top" Width="305"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="46,44,0,0" VerticalAlignment="Top" Width="90"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="Hintergrund.jpg"/>
+        </Grid.Background>
+        <Label Content="Ziel des Spiels: &#xD;&#xA;Wer zuerst alle 4 Figuren ins Ziel bringt, hat gewonnen.&#xD;&#xA;&#xD;&#xA;Spielablauf:&#xD;&#xA;Jeder Spieler muss zu Beginn einmal würfeln - wer die höchste Zahl hat darf anfangen.&#xD;&#xA;Es wird im Uhrzeigersinn gespielt. Zu Beginn des Spiels befinden sich alle Spielfiguren&#xD;&#xA;in der Garage.&#xD;&#xA;Jeder Spieler darf drei Mal würfeln und erst bei einer sechs darf die erste Figur aufs Startfeld &#xD;&#xA;bewegt werden.&#xD;&#xA;Wer im Spielverlauf eine sechs würfelt muss zuerst alle restlichen Figuren ins Spiel&#xD;&#xA; integrieren, bis man die gewünschte Figur ziehen darf&#xD;&#xA;Sollte bereits eine Figur auf dem Feld stehen, auf das man rücken möchte, können Sie &#xD;&#xA;die Figur wieder zurück auf den Start stellen. Die Person muss dann erst wieder &#xD;&#xA;eine sechs würfeln, ehe die Figur wieder mitspielen kann. Handelt es sich um eine Figur der &#xD;&#xA;eigenen Farben, muss man einen anderen Spielzug wählen, da diese Regel &#xD;&#xA;nur für gegnerische Figuren gilt.  &#xD;&#xA;" Height="322" Margin="108,71,0,0" Width="614" HorizontalContentAlignment="Stretch" Background="#00000000" Foreground="#FFF3EAEA" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Mensch ärgere Dich nicht (Regelsatz Normal)&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="264,33,0,0" VerticalAlignment="Top" Width="434" Foreground="White" FontSize="14"/>
+        <Button Content="Zu Regelsatz 2 --&gt;" HorizontalAlignment="Left" Height="22" Margin="646,387,0,0" VerticalAlignment="Top" Width="124"/>
 
     </Grid>
 </Window>
