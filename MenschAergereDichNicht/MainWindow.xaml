@@ -8,13 +8,13 @@
         Title="Hauptmenü" Height="460" Width="910">
     <Grid x:Name="Hauptmenu">
         <Grid.Background>
-            <ImageBrush ImageSource="wallpapertip_brown-paper-wallpaper_374876.jpg"/>
+            <ImageBrush ImageSource="Hintergrund.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnNeuesSpiel" Content="Neues Spiel" HorizontalAlignment="Left" Margin="379,129,0,0" VerticalAlignment="Top" Width="292" Click="btnSpielStarten_Click" RenderTransformOrigin="-1.853,-0.29" Height="230" Foreground="White" BorderBrush="#FFFDFCFC" FontSize="36" Background="#FFAB7D3D"/>
-        <Button x:Name="btnRegeln" Content="Regeln" HorizontalAlignment="Left" Height="70" Margin="218,209,0,0" VerticalAlignment="Top" Width="135" Foreground="White" BorderBrush="White" Background="#FFAB7D3D" FontSize="18"/>
+        <Button x:Name="btnRegeln" Content="Regeln" HorizontalAlignment="Left" Height="70" Margin="218,209,0,0" VerticalAlignment="Top" Width="135" Foreground="White" BorderBrush="White" Background="#FFAB7D3D" FontSize="18" Click="btnRegeln_Click"/>
         <Button x:Name="btnSpielLaden" Content="Spiel laden" HorizontalAlignment="Left" Height="70" Margin="218,129,0,0" VerticalAlignment="Top" Width="135" Background="#FFAB7D3D" BorderBrush="White" Foreground="White" FontSize="18"/>
         <Button x:Name="btnExit" Content="Spiel beenden" HorizontalAlignment="Left" Height="70" Margin="218,289,0,0" VerticalAlignment="Top" Width="135" Background="#FFAB7D3D" BorderBrush="White" Foreground="White" FontSize="18"/>
         <Label x:Name="lblHauptmenue" Content="Mensch ärgere Dich nicht" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Width="575" FontSize="48" Margin="153,18,0,0" Foreground="White"/>
