@@ -8,11 +8,13 @@
         Title="Spielfeld" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="15*"/>
-            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="409*"/>
+            <ColumnDefinition Width="383*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="22" Margin="162.828,30,0,0" VerticalAlignment="Top" Width="21" Stretch="Fill" Grid.Column="1"/>
-        <Image HorizontalAlignment="Left" Height="453" Margin="-36,10,0,-44" VerticalAlignment="Top" Width="579" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="45" Margin="189,-6,0,0" VerticalAlignment="Top" Width="51"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
+        
+
 
     </Grid>
 </Window>
