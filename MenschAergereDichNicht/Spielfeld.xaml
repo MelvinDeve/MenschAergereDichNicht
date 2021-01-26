@@ -26,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="45" Margin="189,-6,0,0" VerticalAlignment="Top" Width="51"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
-        <Button Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Width="51" Height="45">
+        <Button Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Width="32" Height="54">
             <Image Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
         </Button>
 
