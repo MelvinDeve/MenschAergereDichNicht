@@ -31,7 +31,7 @@ namespace MenschAergereDichNicht
             spielfeld.ShowDialog();
         }
 
-        private void btnRegeln_Click(object sender, RoutedEventArgs e)
+        private void btnRegeln_Click_1(object sender, RoutedEventArgs e)
         {
             Regeln regel = new Regeln();
             regel.ShowDialog();
