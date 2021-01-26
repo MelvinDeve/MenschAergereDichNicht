@@ -6,6 +6,19 @@
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
         Title="Spielfeld" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="409*"/>
@@ -13,7 +26,9 @@
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="45" Margin="189,-6,0,0" VerticalAlignment="Top" Width="51"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
-        
+        <Button Style="{StaticResource ImageButtonStyle}" Click="ImageButton_Click" Width="51" Height="45">
+            <Image Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
+        </Button>
 
 
     </Grid>
