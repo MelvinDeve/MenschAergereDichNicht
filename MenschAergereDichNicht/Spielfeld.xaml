@@ -30,7 +30,7 @@
             <Image Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" />
         </Button>
         <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="224,139,0,0" VerticalAlignment="Top" Width="100" Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
+        <Image x:Name="image" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="224,139,0,0" VerticalAlignment="Top" Width="100" Source="Assets/pieceGreen_border02.png"/>
 
 
     </Grid>
