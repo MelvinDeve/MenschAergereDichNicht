@@ -9,6 +9,6 @@ namespace MenschAergereDichNicht
     class Player
     {
         String Name;
-        Figure figures;
+        Figure[] figures = new Figure[4];
     }
 }

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace MenschAergereDichNicht
 {
-    class Figure
+    class PositionGarage
     {
-        int location;
-        Pos position;
     }
 }

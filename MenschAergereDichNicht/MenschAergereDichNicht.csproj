@@ -58,6 +58,8 @@
     <Compile Include="Figure.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Pos.cs" />
+    <Compile Include="PositionGarage.cs" />
+    <Compile Include="PositionHome.cs" />
     <Compile Include="Positions.cs" />
     <Compile Include="Regeln.xaml.cs">
       <DependentUpon>Regeln.xaml</DependentUpon>
