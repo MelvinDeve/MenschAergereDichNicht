@@ -8,7 +8,7 @@
         Title="Hauptmenü" Height="460" Width="910">
     <Grid x:Name="Hauptmenu">
         <Grid.Background>
-            <ImageBrush ImageSource="wallpapertip_brown-paper-wallpaper_374876.jpg"/>
+            <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

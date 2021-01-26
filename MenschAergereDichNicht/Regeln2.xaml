@@ -8,7 +8,7 @@
         Title="Regeln2" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Hintergrund.jpg"/>
+            <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
         </Grid.Background>
         <Label Content="Mensch ärgere Dich nicht (Regelsatz 2)&#xA;" HorizontalAlignment="Left" Height="44" Margin="239,28,0,0" VerticalAlignment="Top" Width="385" Foreground="#FFFDFDFD" FontSize="14"/>
         <Image HorizontalAlignment="Left" Height="92" Margin="18,21,0,0" VerticalAlignment="Top" Width="90" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceGreen_border02.png"/>
