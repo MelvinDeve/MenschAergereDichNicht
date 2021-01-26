@@ -23,5 +23,15 @@ namespace MenschAergereDichNicht
         {
             InitializeComponent();
         }
+
+        private void TxtBxName1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnSpielStarten_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
