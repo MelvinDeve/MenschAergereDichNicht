@@ -10,6 +10,7 @@ namespace MenschAergereDichNicht
     {
         Pos[] positions = new Pos[39];
 
+
         Pos GetCoord(int pos)
         {
             return positions[pos];
