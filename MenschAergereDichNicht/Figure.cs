@@ -9,6 +9,11 @@ namespace MenschAergereDichNicht
     class Figure
     {
         int location;
-        Pos position;
+        int position;
+
+        bool dragFigure(int diceNumber)
+        {
+            return true;
+        }
     }
 }

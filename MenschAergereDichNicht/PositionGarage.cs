@@ -8,5 +8,10 @@ namespace MenschAergereDichNicht
 {
     class PositionGarage
     {
+        Pos[] positions = new Pos[4];
+        Pos GetCoord(int pos)
+        {
+            return positions[pos];
+        }
     }
 }
