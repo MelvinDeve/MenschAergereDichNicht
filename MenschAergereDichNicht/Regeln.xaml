@@ -14,8 +14,8 @@
         <Label Content="Mensch ärgere Dich nicht (Regelsatz Normal)&#xD;&#xA;" HorizontalAlignment="Left" Height="33" Margin="264,33,0,0" VerticalAlignment="Top" Width="434" Foreground="White" FontSize="14"/>
         <Button Content="Zu Regelsatz 2 --&gt;" HorizontalAlignment="Left" Height="22" Margin="646,387,0,0" VerticalAlignment="Top" Width="124" Background="#FFAB7D3D" BorderBrush="#FFF1ECEC" Foreground="#FFFBF5F5" Click="Button_Click"/>
         <Image HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="95" Margin="675,21,0,0" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceBlue_border03.png"/>
-        <Image HorizontalAlignment="Left" Height="92" Margin="10,279,0,0" VerticalAlignment="Top" Width="95" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceYellow_border01.png"/>
-        <Image HorizontalAlignment="Left" Height="92" Margin="694,271,0,0" VerticalAlignment="Top" Width="95" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceRed_border02.png"/>
+        <Image HorizontalAlignment="Left" Height="92" Margin="17,279,0,0" VerticalAlignment="Top" Width="95" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceYellow_border01.png"/>
+        <Image HorizontalAlignment="Left" Height="92" Margin="674,271,0,0" VerticalAlignment="Top" Width="95" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceRed_border02.png"/>
         <Image HorizontalAlignment="Left" Height="92" Margin="18,21,0,0" VerticalAlignment="Top" Width="95" Source="C:\Users\Niklas\source\repos\MenschAergereDichNicht\MenschAergereDichNicht\pieceGreen_border02.png"/>
 
 
