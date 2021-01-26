@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace MenschAergereDichNicht
 {
     /// <summary>
-    /// Interaction logic for Regeln.xaml
+    /// Interaction logic for Regeln2.xaml
     /// </summary>
-    public partial class Regeln : Window
+    public partial class Regeln2 : Window
     {
-        public Regeln()
+        public Regeln2()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Regeln2 regeln2 = new Regeln2();
-            regeln2.ShowDialog();
         }
     }
 }
