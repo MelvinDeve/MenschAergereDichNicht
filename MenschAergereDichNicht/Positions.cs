@@ -36,6 +36,11 @@ namespace MenschAergereDichNicht
     {
         Pos[] positions = new Pos[39];
 
+        Pos GetCoord(int pos)
+        {
+            return positions[pos];
+        }
+
         void fillPositions()
         {
             positions[0] = new Pos(PosConst.xPos_6, PosConst.yPos_0);
@@ -89,10 +94,6 @@ namespace MenschAergereDichNicht
             positions[38] = new Pos(PosConst.xPos_4, PosConst.yPos_0);
 
             positions[39] = new Pos(PosConst.xPos_5, PosConst.yPos_0);
-
-
-
-
         }
 
     }
