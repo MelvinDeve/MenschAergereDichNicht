@@ -107,6 +107,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Abstract-Background-105.eps" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +115,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Abstract-Background-105.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="wallpapertip_brown-paper-wallpaper_374876.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="classic_retro_shading_background_vector_289357.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
