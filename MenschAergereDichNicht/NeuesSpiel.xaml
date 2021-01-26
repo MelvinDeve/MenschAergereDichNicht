@@ -5,23 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
-        Title="NeuesSpiel" Height="450" Width="800">
-    <Grid x:Name="___No_Name_">
-        <ComboBox x:Name="CmBxFarbe1" HorizontalAlignment="Left" Height="33" Margin="555,47,0,0" VerticalAlignment="Top" Width="99"/>
-        <ComboBox x:Name="CmBxFarbe2" HorizontalAlignment="Left" Height="38" Margin="555,119,0,0" VerticalAlignment="Top" Width="91"/>
-        <ComboBox x:Name="CmBxFarbe3" HorizontalAlignment="Left" Height="35" Margin="547,211,0,0" VerticalAlignment="Top" Width="101"/>
-        <ComboBox x:Name="CmBxFarbe4" HorizontalAlignment="Left" Height="32" Margin="567,288,0,0" VerticalAlignment="Top" Width="99"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="320,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="307,117,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Height="35" Margin="305,208,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102"/>
-        <TextBox HorizontalAlignment="Left" Height="32" Margin="305,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102"/>
-        <Label x:Name="LblSpieler1" Content="Name Spieler 1" HorizontalAlignment="Left" Height="33" Margin="50,49,0,0" VerticalAlignment="Top" Width="133"/>
-        <Label x:Name="LblSpieler2" Content="Name Spieler 2" HorizontalAlignment="Left" Height="36" Margin="56,119,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="LblSpieler3" Content="Name Spieler 3" HorizontalAlignment="Left" Height="24" Margin="56,211,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="LblSpieler4" Content="Name Spieler 4" HorizontalAlignment="Left" Height="32" Margin="56,288,0,0" VerticalAlignment="Top" Width="110"/>
-        <Label x:Name="LblRegelsatz" Content="Regelsatz" HorizontalAlignment="Left" Height="30" Margin="175,357,0,0" VerticalAlignment="Top" Width="99"/>
-        <ComboBox x:Name="CmBxRegelsatz" HorizontalAlignment="Left" Height="30" Margin="307,357,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="27" Margin="547,360,0,0" VerticalAlignment="Top" Width="139"/>
+        Title="Neues Spiel" Height="450" Width="800">
+    <Grid x:Name="NeuesSpiel1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
+        </Grid.Background>
+        <ComboBox x:Name="CmBxFarbe1" HorizontalAlignment="Left" Height="35" Margin="510,70,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="CmBxFarbe2" HorizontalAlignment="Left" Height="35" Margin="510,140,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="CmBxFarbe3" HorizontalAlignment="Left" Height="35" Margin="510,210,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="CmBxFarbe4" HorizontalAlignment="Left" Height="35" Margin="510,280,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="TxtBxName1" HorizontalAlignment="Left" Height="40" Margin="250,70,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
+        <TextBox x:Name="TxtBxName2" HorizontalAlignment="Left" Height="40" Margin="250,140,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
+        <TextBox x:Name="TxtBxName3" HorizontalAlignment="Left" Height="40" Margin="250,210,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
+        <TextBox x:Name="TxtBxName4" HorizontalAlignment="Left" Height="40" Margin="250,280,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
+        <Label x:Name="LblSpieler1" Content="Name Spieler 1:" HorizontalAlignment="Left" Height="40" Margin="50,70,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" FontStyle="Normal" VerticalAlignment="Top"/>
+        <Label x:Name="LblSpieler2" Content="Name Spieler 2:" HorizontalAlignment="Left" Height="40" Margin="50,140,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
+        <Label x:Name="LblSpieler3" Content="Name Spieler 3:" HorizontalAlignment="Left" Height="40" Margin="50,210,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
+        <Label x:Name="LblSpieler4" Content="Name Spieler 4:" HorizontalAlignment="Left" Height="40" Margin="50,280,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
+        <Label x:Name="LblRegelsatz" Content="Regelsatz:" HorizontalAlignment="Left" Height="40" Margin="50,350,0,0" VerticalAlignment="Top" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White"/>
+        <ComboBox x:Name="CmBxRegelsatz" HorizontalAlignment="Left" Height="30" Margin="250,350,0,0" VerticalAlignment="Top" Width="120" Background="#FFAB7D3D" Foreground="#FFAB7D3D" BorderBrush="#FFFFFDFD"/>
+        <Button x:Name="BtnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="310" Margin="616,70,0,0" VerticalAlignment="Top" Width="143" Background="#FF3C8214" Foreground="White" FontSize="18" BorderBrush="#FFFEFFFE"/>
+        <Label x:Name="LblFarbe1" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,70,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
+        <Label x:Name="LblFarbe2" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,140,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
+        <Label x:Name="LblFarbe3" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,210,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
+        <Label x:Name="LblFarbe4" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,280,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
 
     </Grid>
 </Window>

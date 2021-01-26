@@ -6,14 +6,29 @@
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
         Title="Spielfeld" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="409*"/>
             <ColumnDefinition Width="383*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="pack://application:,,,MenschAergereDichNicht/Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
-        <Image HorizontalAlignment="Left" Height="45" Margin="329,-6,0,0" VerticalAlignment="Top" Width="51"  Source="pack://application:,,,MenschAergereDichNicht/Assets/pieceGreen_border02.png"/>
-
+        <Image Grid.Column="0" HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="198,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" />
+        </Button>
+       
 
 
     </Grid>
