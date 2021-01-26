@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="btnNeuesSpiel" Content="Neues Spiel" HorizontalAlignment="Left" Margin="407,119,0,0" VerticalAlignment="Top" Width="335" Click="btnSpielStarten_Click" RenderTransformOrigin="-1.853,-0.29" Height="199"/>
-        <Button x:Name="btnRegeln" Content="Regeln" HorizontalAlignment="Left" Height="67" Margin="132,164,0,0" VerticalAlignment="Top" Width="146"/>
+        <Button x:Name="btnRegeln" Content="Regeln" HorizontalAlignment="Left" Height="67" Margin="132,164,0,0" VerticalAlignment="Top" Width="146" Click="btnRegeln_Click"/>
         <Button x:Name="btnSpielLaden" Content="Spiel laden" HorizontalAlignment="Left" Height="71" Margin="144,58,0,0" VerticalAlignment="Top" Width="134"/>
         <Button x:Name="btnExit" Content="Spiel laden" HorizontalAlignment="Left" Height="61" Margin="141,275,0,0" VerticalAlignment="Top" Width="137"/>
 
