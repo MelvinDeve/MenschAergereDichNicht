@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
-        Title="NeuesSpiel" Height="450" Width="800" WindowStyle="None">
+        Title="Neues Spiel" Height="450" Width="800">
     <Grid x:Name="NeuesSpiel1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

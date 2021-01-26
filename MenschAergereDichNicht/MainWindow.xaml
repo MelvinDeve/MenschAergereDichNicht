@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
-        Title="MainWindow" Height="459.278" Width="911.34" WindowStyle="None">
+        Title="Hauptmenü" Height="460" Width="910">
     <Grid x:Name="Hauptmenu">
         <Grid.Background>
             <ImageBrush ImageSource="wallpapertip_brown-paper-wallpaper_374876.jpg"/>
