@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Figure.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Regeln.xaml.cs">
       <DependentUpon>Regeln.xaml</DependentUpon>
     </Compile>
