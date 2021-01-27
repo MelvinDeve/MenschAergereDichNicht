@@ -44,8 +44,6 @@ namespace MenschAergereDichNicht
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-            if (aktZug.zugstatus == 1)
-            {
                 Random dice = new Random();
                 int number;
 
@@ -74,7 +72,7 @@ namespace MenschAergereDichNicht
                 }
 
                 rolledDice = number;
-            }
+            
 
         }
 
