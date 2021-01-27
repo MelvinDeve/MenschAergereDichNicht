@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
+        Icon="Assets/icon.png"
         Title="Hauptmenü" Height="460" Width="910">
     <Grid x:Name="Hauptmenu">
         <Grid.Background>
@@ -18,6 +19,5 @@
         <Button x:Name="btnSpielLaden" Content="Spiel laden" HorizontalAlignment="Left" Height="70" Margin="209,129,0,0" VerticalAlignment="Top" Width="135" Background="#FFAB7D3D" BorderBrush="White" Foreground="White" FontSize="18" Click="btnSpielLaden_Click"/>
         <Button x:Name="btnExit" Content="Spiel beenden" HorizontalAlignment="Left" Height="70" Margin="209,289,0,0" VerticalAlignment="Top" Width="135" Background="#FFAB7D3D" BorderBrush="White" Foreground="White" FontSize="18"/>
         <Label x:Name="lblHauptmenue" Content="Mensch ärgere Dich nicht" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Width="575" FontSize="48" Margin="153,18,0,0" Foreground="White"/>
-
     </Grid>
 </Window>

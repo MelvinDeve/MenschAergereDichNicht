@@ -145,5 +145,8 @@
     <Resource Include="Assets\Farbe_grün.png" />
     <Resource Include="Assets\Farbe_rot.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
