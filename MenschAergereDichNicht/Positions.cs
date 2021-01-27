@@ -36,7 +36,7 @@ namespace MenschAergereDichNicht
     class Positions
     {
         Pos[] positions = new Pos[40];
-
+        Pos defaultPosition = new Pos(0, 0);
         public Pos GetCoord(int pos)
         {
             return positions[pos];
