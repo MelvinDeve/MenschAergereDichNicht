@@ -18,8 +18,8 @@ namespace MenschAergereDichNicht
         public const int yPos_6 = 208;
         public const int yPos_7 = 242;
         public const int yPos_8 = 278;
-        public const int yPos_9 = 314;
-        public const int yPos_10 = 354;
+        public const int yPos_9 = 312;
+        public const int yPos_10 = 348;
 
         public const int xPos_0 = 13+9;
         public const int xPos_1 = 48 + 9;
