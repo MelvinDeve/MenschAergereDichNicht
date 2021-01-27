@@ -20,24 +20,131 @@ namespace MenschAergereDichNicht
     public partial class Spielfeld : Window
     {
         Positions fieldPositions = new Positions();
+        int rolledDice = -1;
         public Spielfeld()
         {
             InitializeComponent();
         }
 
-        private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
+        private void Dice_Click(object sender, RoutedEventArgs e)
         {
-            //btnFigGruen0.Margin = new Thickness(224 + 9, -6,0,0);
-            //MessageBox.Show(btnFigGruen0.Margin.Top.ToString());
-            moveFigure(btnFigGruen0);
+
+            Random dice = new Random();
+            int number;
+
+            number = dice.Next(1, 7);
+
+            switch (number)
+            {
+                case 1:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
+                    break;
+                case 2:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border2.png", UriKind.Relative));
+                    break;
+                case 3:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border3.png", UriKind.Relative));
+                    break;
+                case 4:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border4.png", UriKind.Relative));
+                    break;
+                case 5:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border5.png", UriKind.Relative));
+                    break;
+                case 6:
+                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border6.png", UriKind.Relative));
+                    break;
+            }
+
+            rolledDice = number;
+
         }
 
-        private void moveFigure(Button figure)
+        private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
         {
+            moveFigure(btnFigGruen0, rolledDice, ColConst.col_green);
+        }
+        private void btnFigGruen1_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGruen1, rolledDice, ColConst.col_green);
+        }
+        private void btnFigGruen2_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGruen2, rolledDice, ColConst.col_green);
+        }
+        private void btnFigGruen3_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGruen3, rolledDice, ColConst.col_green);
+        }
+
+        private void btnFigBlau0_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigBlau0, rolledDice, ColConst.col_blue);
+        }
+        private void btnFigBlau1_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigBlau1, rolledDice, ColConst.col_blue);
+        }
+        private void btnFigBlau2_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigBlau2, rolledDice, ColConst.col_blue);
+        }
+        private void btnFigBlau3_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigBlau3, rolledDice, ColConst.col_blue);
+        }
+
+        private void btnFigGelb0_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGelb0, rolledDice, ColConst.col_yellow);
+        }
+        private void btnFigGelb1_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGelb1, rolledDice, ColConst.col_yellow);
+        }
+        private void btnFigGelb2_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGelb2, rolledDice, ColConst.col_yellow);
+        }
+        private void btnFigGelb3_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigGelb3, rolledDice, ColConst.col_yellow);
+        }
+
+        private void btnFigRot0_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigRot0, rolledDice, ColConst.col_red);
+        }
+        private void btnFigRot1_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigRot1, rolledDice, ColConst.col_red);
+        }
+        private void btnFigRot2_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigRot2, rolledDice, ColConst.col_red);
+        }
+        private void btnFigRot3_Click(object sender, RoutedEventArgs e)
+        {
+            moveFigure(btnFigRot3, rolledDice, ColConst.col_red);
+        }
+
+        private void moveFigure(Button figure, int diceNumber, int color)
+        {
+            if (diceNumber == -1)
+            {
+                return;
+            }
+
             int currentPos = fieldPositions.GetPos(figure.Margin);
-            int newPos = fieldPositions.incrementPosition(currentPos, 5);
-            Pos newCoord = fieldPositions.GetCoord(newPos);
-            figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
+            if (currentPos == -1)
+            {
+                
+            }
+
+                int newPos = fieldPositions.incrementPosition(currentPos, 5);
+                Pos newCoord = fieldPositions.GetCoord(newPos);
+                figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
+            
         }
     }
 }
