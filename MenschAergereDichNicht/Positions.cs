@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace MenschAergereDichNicht
 {
@@ -40,6 +41,12 @@ namespace MenschAergereDichNicht
         public Pos GetCoord(int pos)
         {
             return positions[pos];
+        }
+
+        bool jemandVorHaus(List<Button> figures, int color)
+        {
+            //TO DO: schaut ob jemand von der eigenen farbe direkt vor dem haus steht sodass keiner raus kann
+            return false;
         }
 
         public int GetPos(Thickness th)

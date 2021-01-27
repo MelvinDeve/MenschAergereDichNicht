@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace MenschAergereDichNicht
 {
@@ -30,6 +31,12 @@ namespace MenschAergereDichNicht
                     return defaultPosition;
             }
 
+        }
+
+        int numberImmoveable(List<Button> figures, int color)
+        {
+            //TO DO: gibt die anzahl an figuren die in der Garage an ihrer finalen Position sind zurueck
+            return 0;
         }
 
         void fillGaragePositions()
