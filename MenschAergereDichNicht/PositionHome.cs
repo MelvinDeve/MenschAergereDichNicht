@@ -87,10 +87,6 @@ namespace MenschAergereDichNicht
             }
         }
         
-
-
-        
-
         void fillHomePositions()
         {
             positions_home_blue[0] = new Pos(PosConst.xPos_9, PosConst.yPos_0);
