@@ -12,8 +12,9 @@ namespace MenschAergereDichNicht
         Pos[] positions_garage_red = new Pos[4];
         Pos[] positions_garage_yellow = new Pos[4];
         Pos[] positions_garage_green = new Pos[4];
+        Pos defaultPosition = new Pos(0, 0);
 
-        Pos GetCoord(int pos, int col)
+        Pos GetHomeCoord(int pos, int col)
         {
             switch (col)
             {
@@ -26,7 +27,7 @@ namespace MenschAergereDichNicht
                 case 3:              
                     return positions_garage_green[pos];
                 default:             
-                    return positions_garage_green[0];
+                    return defaultPosition;
             }
 
         }
