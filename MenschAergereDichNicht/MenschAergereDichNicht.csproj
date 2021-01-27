@@ -139,5 +139,11 @@
     <Resource Include="Assets\pieceYellow_border01.png" />
     <Resource Include="Assets\spielfeld.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Farbe_blau.png" />
+    <Resource Include="Assets\Farbe_gelb.png" />
+    <Resource Include="Assets\Farbe_grün.png" />
+    <Resource Include="Assets\Farbe_rot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

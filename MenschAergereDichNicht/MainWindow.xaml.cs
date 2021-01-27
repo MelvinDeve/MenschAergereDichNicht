@@ -36,5 +36,11 @@ namespace MenschAergereDichNicht
             Regeln regel = new Regeln();
             regel.ShowDialog();
         }
+
+        private void btnSpielLaden_Click(object sender, RoutedEventArgs e)
+        {
+            NeuesSpiel laden = new NeuesSpiel();
+            laden.ShowDialog();
+        }
     }
 }
