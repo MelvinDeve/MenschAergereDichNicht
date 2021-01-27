@@ -53,7 +53,7 @@
         </Button>
 
         <Button Grid.Column="0" x:Name="btnFigGelb0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb0_Click" Width="26" Height="44" Margin="22,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
+            <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Bottom" />
         </Button>
         <Button Grid.Column="0" x:Name="btnFigGelb1" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb1_Click" Width="26" Height="44" Margin="57,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
@@ -78,10 +78,9 @@
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
+
         <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198,236,-237,-259" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" />
         </Button>
-
-
     </Grid>
 </Window>
