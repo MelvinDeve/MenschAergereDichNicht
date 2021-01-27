@@ -13,7 +13,7 @@ namespace MenschAergereDichNicht
         Pos[] positions_garage_yellow = new Pos[4];
         Pos[] positions_garage_green = new Pos[4];
 
-        Pos GetCoord(int pos, int col)
+        Pos GetHomeCoord(int pos, int col)
         {
             switch (col)
             {

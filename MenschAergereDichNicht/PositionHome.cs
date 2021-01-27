@@ -20,7 +20,7 @@ namespace MenschAergereDichNicht
         Pos[] positions_home_yellow = new Pos[4];
         Pos[] positions_home_green = new Pos[4];
 
-        Pos GetCoord(int pos, int col)
+        Pos GetHomeCoord(int pos, int col)
         {
             switch (col)
             {
@@ -37,6 +37,7 @@ namespace MenschAergereDichNicht
             }
 
         }
+
 
         
 

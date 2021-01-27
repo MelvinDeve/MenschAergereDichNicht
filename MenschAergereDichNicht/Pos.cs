@@ -8,8 +8,8 @@ namespace MenschAergereDichNicht
 {
     class Pos
     {
-        double xPos;
-        double yPos;
+        double xPos { get; set; }
+        double yPos { get; set; }
 
         public Pos(double _xPos, double _yPos) {
             xPos = _xPos;
