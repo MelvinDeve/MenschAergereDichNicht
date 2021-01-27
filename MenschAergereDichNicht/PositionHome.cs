@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MenschAergereDichNicht
 {
@@ -38,6 +39,42 @@ namespace MenschAergereDichNicht
             }
 
         }
+
+        bool isinHome(Thickness thk, int color)
+        {
+            Pos tempPos = new Pos(thk.Left,thk.Top);
+            switch (color)
+            {
+                case 0:
+                    if (tempPos == positions_home_blue[0] || tempPos == positions_home_blue[1] || tempPos == positions_home_blue[2] || tempPos == positions_home_blue[3])
+                    {
+                        return true;
+                    };
+                    return false;
+                case 1:
+                    if (tempPos == positions_home_red[0] || tempPos == positions_home_red[1] || tempPos == positions_home_red[2] || tempPos == positions_home_red[3])
+                    {
+                        return true;
+                    };
+                    return false;
+                case 2:
+                    if (tempPos == positions_home_yellow[0] || tempPos == positions_home_yellow[1] || tempPos == positions_home_yellow[2] || tempPos == positions_home_yellow[3])
+                    {
+                        return true;
+                    };
+                    return false;
+                case 3:
+                    if (tempPos == positions_home_green[0] || tempPos == positions_home_green[1] || tempPos == positions_home_green[2] || tempPos == positions_home_green[3])
+                    {
+                        return true;
+                    };
+                    return false;
+                default:
+                    return false;
+                        
+            }
+        }
+        
 
 
         
