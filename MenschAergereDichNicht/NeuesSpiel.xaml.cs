@@ -31,7 +31,7 @@ namespace MenschAergereDichNicht
 
         private void BtnSpielStarten_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
