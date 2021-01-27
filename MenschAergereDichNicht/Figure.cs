@@ -8,12 +8,13 @@ namespace MenschAergereDichNicht
 {
     class Figure
     {
-        int location;
-        int position;
+        int relPos;
+        int color;
 
-        bool dragFigure(int diceNumber)
+        public Figure(int _relPos, int _color)
         {
-            return true;
+            relPos = _relPos;
+            color = _color;
         }
     }
 }

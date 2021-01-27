@@ -71,6 +71,7 @@
       <DependentUpon>Spielfeld.xaml</DependentUpon>
     </Compile>
     <Compile Include="Spielzug.cs" />
+    <Compile Include="Zugkontrolle.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

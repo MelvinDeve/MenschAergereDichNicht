@@ -22,6 +22,11 @@ namespace MenschAergereDichNicht
         List<Player> Spieler = new List<Player>();
         Positions fieldPositions = new Positions();
         Spielzug aktZug = new Spielzug();
+        List<Button> greenFigures;
+        List<Button> redFigures;
+        List<Button> blueFigures;
+        List<Button> yellowFigures;
+        Zugkontrolle zugkontrolle;
 
         int rolledDice = -1;
         public Spielfeld()
@@ -29,13 +34,17 @@ namespace MenschAergereDichNicht
             Spieler.Add(new Player("Hans", ColConst.col_green));
             Spieler.Add(new Player("Frank", ColConst.col_blue));
             aktZug.spieler = Spieler[0];
-            aktZug.zugstatus = Zugstatus.wuerfeln;
+            greenFigures = new List<Button> { btnFigGruen0, btnFigGruen1, btnFigGruen2, btnFigGruen3 };
+            redFigures = new List<Button> { btnFigRot0, btnFigRot1, btnFigRot2, btnFigRot3};
+            blueFigures = new List<Button> { btnFigBlau0, btnFigBlau1, btnFigBlau2, btnFigBlau3 };
+            yellowFigures = new List<Button> { btnFigGelb0, btnFigGelb1, btnFigGelb2, btnFigGelb3 };
+            zugkontrolle = new Zugkontrolle(greenFigures, redFigures, blueFigures, yellowFigures);
             InitializeComponent();
         }
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-            if (aktZug.zugstatus == Zugstatus.wuerfeln)
+            if (aktZug.zugstatus == 1)
             {
                 Random dice = new Random();
                 int number;
@@ -135,6 +144,7 @@ namespace MenschAergereDichNicht
         private void btnFigRot3_Click(object sender, RoutedEventArgs e)
         {
             moveFigure(btnFigRot3, rolledDice, ColConst.col_red);
+
         }
 
         private void moveFigure(Button figure, int diceNumber, int color)

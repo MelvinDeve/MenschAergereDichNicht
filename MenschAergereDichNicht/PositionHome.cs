@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace MenschAergereDichNicht
 {
@@ -37,6 +38,12 @@ namespace MenschAergereDichNicht
                     return defaultPosition;
             }
 
+        }
+
+        int numberInHouse(List<Button> figures, int color)
+        {
+            //TO DO: gibt die anzahl an figuren die im Haus sind zurueck
+            return 0;
         }
 
 

@@ -8,8 +8,11 @@ namespace MenschAergereDichNicht
 {
     static class Zugstatus
     {
-        public const int wuerfeln = 0;
-        public const int ziehen = 1;
+        public const int ersterWurf = 0;
+        public const int hausVoll2 = 1;
+        public const int hausVoll3 = 2;
+        public const int ziehen = 3;
+        public const int ziehen6geworfen = 4;
     }
     class Spielzug
     {
