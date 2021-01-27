@@ -148,5 +148,13 @@
   <ItemGroup>
     <Resource Include="Assets\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\dieWhite_border1.png" />
+    <Resource Include="Assets\dieWhite_border2.png" />
+    <Resource Include="Assets\dieWhite_border3.png" />
+    <Resource Include="Assets\dieWhite_border4.png" />
+    <Resource Include="Assets\dieWhite_border5.png" />
+    <Resource Include="Assets\dieWhite_border6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
