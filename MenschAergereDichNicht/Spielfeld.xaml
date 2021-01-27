@@ -26,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" HorizontalAlignment="Left" Height="399" Margin="18,10,0,0" VerticalAlignment="Top" Width="410" Source="Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
         <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="198,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" />
+            <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
        
 

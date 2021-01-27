@@ -24,10 +24,14 @@ namespace MenschAergereDichNicht
             InitializeComponent();
         }
 
-
         private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Test");
+            btnFigGruen0.Margin = new Thickness(224 + 9, -6,0,0);
+        }
+
+        private void moveFigure()
+        {
+
         }
     }
 }
