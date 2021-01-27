@@ -22,10 +22,10 @@ namespace MenschAergereDichNicht
         List<Player> Spieler = new List<Player>();
         Positions fieldPositions = new Positions();
         Spielzug aktZug = new Spielzug();
-        List<Button> greenFigures;
-        List<Button> redFigures;
-        List<Button> blueFigures;
-        List<Button> yellowFigures;
+        Figure[] greenFigures;
+        Figure[] redFigures;
+        Figure[] blueFigures;
+        Figure[] yellowFigures;
         Zugkontrolle zugkontrolle;
 
         int rolledDice = -1;
@@ -34,11 +34,11 @@ namespace MenschAergereDichNicht
             Spieler.Add(new Player("Hans", ColConst.col_green));
             Spieler.Add(new Player("Frank", ColConst.col_blue));
             aktZug.spieler = Spieler[0];
-            greenFigures = new List<Button> { btnFigGruen0, btnFigGruen1, btnFigGruen2, btnFigGruen3 };
-            redFigures = new List<Button> { btnFigRot0, btnFigRot1, btnFigRot2, btnFigRot3};
-            blueFigures = new List<Button> { btnFigBlau0, btnFigBlau1, btnFigBlau2, btnFigBlau3 };
-            yellowFigures = new List<Button> { btnFigGelb0, btnFigGelb1, btnFigGelb2, btnFigGelb3 };
-            zugkontrolle = new Zugkontrolle(greenFigures, redFigures, blueFigures, yellowFigures);
+            greenFigures = new Figure[4] { new Figure(-1, ColConst.col_green), new Figure(-2, ColConst.col_green), new Figure(-3, ColConst.col_green), new Figure(-4, ColConst.col_green) };
+            redFigures = new Figure[4] { new Figure(-1, ColConst.col_red), new Figure(-2, ColConst.col_red), new Figure(-3, ColConst.col_red), new Figure(-4, ColConst.col_red) };
+            blueFigures = new Figure[4] { new Figure(-1, ColConst.col_blue), new Figure(-2, ColConst.col_blue), new Figure(-3, ColConst.col_blue), new Figure(-4, ColConst.col_blue) };
+            yellowFigures = new Figure[4] { new Figure(-1, ColConst.col_yellow), new Figure(-2, ColConst.col_yellow), new Figure(-3, ColConst.col_yellow), new Figure(-4, ColConst.col_yellow) };
+            //zugkontrolle = new Zugkontrolle(greenFigures, redFigures, blueFigures, yellowFigures);
             InitializeComponent();
         }
 
