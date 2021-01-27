@@ -70,6 +70,7 @@
     <Compile Include="Spielfeld.xaml.cs">
       <DependentUpon>Spielfeld.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Spielzug.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

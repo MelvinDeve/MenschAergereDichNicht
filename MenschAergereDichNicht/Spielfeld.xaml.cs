@@ -19,44 +19,53 @@ namespace MenschAergereDichNicht
     /// </summary>
     public partial class Spielfeld : Window
     {
+        List<Player> Spieler = new List<Player>();
         Positions fieldPositions = new Positions();
+        Spielzug aktZug = new Spielzug();
+
         int rolledDice = -1;
         public Spielfeld()
         {
+            Spieler.Add(new Player("Hans", ColConst.col_green));
+            Spieler.Add(new Player("Frank", ColConst.col_blue));
+            aktZug.spieler = Spieler[0];
+            aktZug.zugstatus = Zugstatus.wuerfeln;
             InitializeComponent();
         }
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-
-            Random dice = new Random();
-            int number;
-
-            number = dice.Next(1, 7);
-
-            switch (number)
+            if (aktZug.zugstatus == Zugstatus.wuerfeln)
             {
-                case 1:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
-                    break;
-                case 2:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border2.png", UriKind.Relative));
-                    break;
-                case 3:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border3.png", UriKind.Relative));
-                    break;
-                case 4:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border4.png", UriKind.Relative));
-                    break;
-                case 5:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border5.png", UriKind.Relative));
-                    break;
-                case 6:
-                    ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border6.png", UriKind.Relative));
-                    break;
-            }
+                Random dice = new Random();
+                int number;
 
-            rolledDice = number;
+                number = dice.Next(1, 7);
+
+                switch (number)
+                {
+                    case 1:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
+                        break;
+                    case 2:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border2.png", UriKind.Relative));
+                        break;
+                    case 3:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border3.png", UriKind.Relative));
+                        break;
+                    case 4:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border4.png", UriKind.Relative));
+                        break;
+                    case 5:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border5.png", UriKind.Relative));
+                        break;
+                    case 6:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border6.png", UriKind.Relative));
+                        break;
+                }
+
+                rolledDice = number;
+            }
 
         }
 
@@ -130,20 +139,23 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure, int diceNumber, int color)
         {
-            if (diceNumber == -1)
+            if (aktZug.zugstatus == Zugstatus.ziehen)
             {
-                return;
-            }
+                if (diceNumber == -1)
+                {
+                    return;
+                }
 
-            int currentPos = fieldPositions.GetPos(figure.Margin);
-            if (currentPos == -1)
-            {
-                
-            }
+                int currentPos = fieldPositions.GetPos(figure.Margin);
+                if (currentPos == -1)
+                {
+
+                }
 
                 int newPos = fieldPositions.incrementPosition(currentPos, 5);
                 Pos newCoord = fieldPositions.GetCoord(newPos);
                 figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
+            }
             
         }
     }
