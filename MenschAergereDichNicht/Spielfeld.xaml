@@ -28,7 +28,10 @@
         <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="198,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-       
+        <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198,236,-237,-259" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" />
+        </Button>
+        
 
 
     </Grid>
