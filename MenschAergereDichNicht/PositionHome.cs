@@ -19,21 +19,22 @@ namespace MenschAergereDichNicht
         Pos[] positions_home_red = new Pos[4];
         Pos[] positions_home_yellow = new Pos[4];
         Pos[] positions_home_green = new Pos[4];
+        Pos defaultPosition = new Pos(0, 0);
 
-        Pos GetHomeCoord(int pos, int col)
+        Pos GetHomeCoord(int pinNum, int pos, int col)
         {
             switch (col)
             {
                 case 0:
-                    return positions_home_blue[pos];
+                    return positions_home_blue[pinNum];
                 case 1:             
-                    return positions_home_red[pos];
+                    return positions_home_red[pinNum];
                 case 2:             
-                    return positions_home_yellow[pos];
+                    return positions_home_yellow[pinNum];
                 case 3:             
-                    return positions_home_green[pos];
+                    return positions_home_green[pinNum];
                 default:            
-                    return positions_home_green[0];
+                    return defaultPosition;
             }
 
         }
