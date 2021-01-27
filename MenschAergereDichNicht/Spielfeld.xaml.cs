@@ -19,6 +19,7 @@ namespace MenschAergereDichNicht
     /// </summary>
     public partial class Spielfeld : Window
     {
+        Positions fieldPositions = new Positions();
         public Spielfeld()
         {
             InitializeComponent();
@@ -26,12 +27,17 @@ namespace MenschAergereDichNicht
 
         private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
         {
-            btnFigGruen0.Margin = new Thickness(224 + 9, -6,0,0);
+            //btnFigGruen0.Margin = new Thickness(224 + 9, -6,0,0);
+            //MessageBox.Show(btnFigGruen0.Margin.Top.ToString());
+            moveFigure(btnFigGruen0);
         }
 
-        private void moveFigure()
+        private void moveFigure(Button figure)
         {
-
+            int currentPos = fieldPositions.GetPos(figure.Margin);
+            int newPos = fieldPositions.incrementPosition(currentPos, 5);
+            Pos newCoord = fieldPositions.GetCoord(newPos);
+            figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
         }
     }
 }

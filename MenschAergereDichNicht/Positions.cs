@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MenschAergereDichNicht
 {
@@ -34,14 +35,41 @@ namespace MenschAergereDichNicht
     }
     class Positions
     {
-        Pos[] positions = new Pos[39];
+        Pos[] positions = new Pos[40];
 
-        Pos GetCoord(int pos)
+        public Pos GetCoord(int pos)
         {
             return positions[pos];
         }
 
-        void fillPositions()
+        public int GetPos(Thickness th)
+        {
+            for(int i = 0; i<39; i++)
+            {
+                if (positions[i].xPos == th.Left && positions[i].yPos == th.Top)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public int incrementPosition(int currentPos, int diceNumber)
+        {
+            int returnPos = currentPos + diceNumber;
+            if (returnPos > 39)
+            {
+                returnPos -= 39;
+            }
+            return returnPos;
+        }
+
+        public Positions()
+        {
+            fillPositions();
+        }
+
+        public void fillPositions()
         {
             positions[0] = new Pos(PosConst.xPos_6, PosConst.yPos_0);
             positions[1] = new Pos(PosConst.xPos_6, PosConst.yPos_1);
