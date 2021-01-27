@@ -140,22 +140,13 @@
     <Resource Include="Assets\spielfeld.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\dieWhite_border1.png" />
+    <Resource Include="Assets\Farbe_blau.png" />
+    <Resource Include="Assets\Farbe_gelb.png" />
+    <Resource Include="Assets\Farbe_grün.png" />
+    <Resource Include="Assets\Farbe_rot.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\dieWhite_border2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\dieWhite_border3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\dieWhite_border4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\dieWhite_border5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\dieWhite_border6.png" />
+    <Resource Include="Assets\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
