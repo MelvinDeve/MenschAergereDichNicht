@@ -46,25 +46,37 @@ namespace MenschAergereDichNicht
             switch (color)
             {
                 case 0:
-                    if (tempPos == positions_home_blue[0] || tempPos == positions_home_blue[1] || tempPos == positions_home_blue[2] || tempPos == positions_home_blue[3])
+                    if (tempPos == positions_home_blue[0] || 
+                        tempPos == positions_home_blue[1] || 
+                        tempPos == positions_home_blue[2] || 
+                        tempPos == positions_home_blue[3])
                     {
                         return true;
                     };
                     return false;
                 case 1:
-                    if (tempPos == positions_home_red[0] || tempPos == positions_home_red[1] || tempPos == positions_home_red[2] || tempPos == positions_home_red[3])
+                    if (tempPos == positions_home_red[0] || 
+                        tempPos == positions_home_red[1] || 
+                        tempPos == positions_home_red[2] || 
+                        tempPos == positions_home_red[3])
                     {
                         return true;
                     };
                     return false;
                 case 2:
-                    if (tempPos == positions_home_yellow[0] || tempPos == positions_home_yellow[1] || tempPos == positions_home_yellow[2] || tempPos == positions_home_yellow[3])
+                    if (tempPos == positions_home_yellow[0] || 
+                        tempPos == positions_home_yellow[1] || 
+                        tempPos == positions_home_yellow[2] || 
+                        tempPos == positions_home_yellow[3])
                     {
                         return true;
                     };
                     return false;
                 case 3:
-                    if (tempPos == positions_home_green[0] || tempPos == positions_home_green[1] || tempPos == positions_home_green[2] || tempPos == positions_home_green[3])
+                    if (tempPos == positions_home_green[0] || 
+                        tempPos == positions_home_green[1] || 
+                        tempPos == positions_home_green[2] || 
+                        tempPos == positions_home_green[3])
                     {
                         return true;
                     };
