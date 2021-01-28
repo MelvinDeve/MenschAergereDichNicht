@@ -36,19 +36,94 @@ namespace MenschAergereDichNicht
     }
     class Positions
     {
+        PositionGarage PosGar = new PositionGarage();
+        PositionHome PosHome = new PositionHome();
+
         Pos[] positions = new Pos[40];
         Pos defaultPosition = new Pos(0, 0);
-        public Pos GetCoord(int pos)
+
+        public Pos GetCoord(Figure fig)
         {
-            return positions[pos];
+            int absolutePos;
+
+            if (fig.relPos <= 39 && fig.relPos >= 0)
+            {
+                if ((fig.relPos + fig.diff) > 39)
+                {
+                    absolutePos = fig.relPos + fig.diff - 40;
+                }
+                else
+                {
+                    absolutePos = fig.relPos + fig.diff;
+                }
+                return positions[absolutePos];
+            }
+            else if (fig.relPos > 39)
+            {
+                switch (fig.color)
+                {
+                    case 0:
+                        return PosGar.positions_garage_blue[fig.relPos - 40];
+                    case 1:
+                        return PosGar.positions_garage_red[fig.relPos - 40];
+                    case 2:
+                        return PosGar.positions_garage_yellow[fig.relPos - 40];
+                    case 3:
+                        return PosGar.positions_garage_green[fig.relPos - 40];
+                    default:
+                        break;
+                }
+            }
+            return PosHome.defaultPosition;
         }
 
-        bool jemandVorHaus(List<Button> figures, int color)
+        //public Pos SendHome(Figure fig)
+        //{
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        switch (fig.color)
+        //        {
+        //            case 0:
+        //                return PosHome.positions_home_blue[fig.relPos - 39];
+        //            case 1:
+        //                return PosHome.positions_home_red[fig.relPos - 39];
+        //            case 2:
+        //                return PosHome.positions_home_yellow[fig.relPos - 39];
+        //            case 3:
+        //                return PosHome.positions_home_green[fig.relPos - 39];
+        //            default:
+        //                break;
+        //        }
+        //    }
+
+            
+
+        //    return PosHome.defaultPosition;
+        //}
+
+
+        /// <summary>
+        /// Checks if a Pin of the same color is on a projected Position
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public bool checkSameColPos(Figure[] figures, int position)
         {
-            //TO DO: schaut ob jemand von der eigenen farbe direkt vor dem haus steht sodass keiner raus kann
+            foreach(Figure figure in figures)
+            {
+                if (figure.relPos == position) 
+                {
+                    return true;
+                }
+            }
             return false;
         }
-
+        /// <summary>
+        /// returns index of a given Position 
+        /// </summary>
+        /// <param name="th"></param>
+        /// <returns></returns>
         public int GetPos(Thickness th)
         {
             for(int i = 0; i<39; i++)
@@ -61,6 +136,65 @@ namespace MenschAergereDichNicht
             return -1;
         }
 
+        public int anzFigurenInEndpos(Figure[] figures)
+        {
+            int anz = 0;
+            int verglWert = 43;
+            int prevVerglWert = 44;
+            while (verglWert < prevVerglWert&& verglWert>39)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (figures[i].relPos == verglWert)
+                    {
+                        anz++;
+                        verglWert--;
+                        break;
+                    }
+                }
+                prevVerglWert--;
+            }
+            return anz;
+        }
+
+        public int anzFigurenZugfaehig(Figure[] figures, int diceRoll)
+        {
+            bool tempZugfaehig;
+            int zugfaehig = 0;
+            foreach (Figure figure in figures)
+            {
+                tempZugfaehig = true;
+                if (figure.relPos >= 0)
+                {
+                    if (figure.relPos + diceRoll > 43)
+                    {
+                        tempZugfaehig = false;
+                    }
+                    else
+                    {
+                        foreach (Figure secondFigure in figures)
+                        {
+                            if (figure.relPos + diceRoll == secondFigure.relPos)
+                            {
+                                tempZugfaehig = false;
+                            }
+                        }
+                    }
+                }
+                if (tempZugfaehig)
+                {
+                    zugfaehig++;
+                }
+            }
+            return zugfaehig;
+        }
+
+        /// <summary>
+        /// increments Position by given amount
+        /// </summary>
+        /// <param name="currentPos"></param>
+        /// <param name="diceNumber"></param>
+        /// <returns></returns>
         public int incrementPosition(int currentPos, int diceNumber)
         {
             int returnPos = currentPos + diceNumber;
@@ -70,12 +204,110 @@ namespace MenschAergereDichNicht
             }
             return returnPos;
         }
-
+        /// <summary>
+        /// uses figure array and location(in this case margin) to determine which figure 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <param name="marginToCheck"></param>
+        /// <returns></returns>
+        public int whichFigure(Figure[] figures, Thickness marginToCheck)
+        {
+            Pos posToCheck = new Pos(marginToCheck.Left, marginToCheck.Top);
+            int[] absolutePos = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                if (figures[i].relPos > 39)
+                {
+                    switch (figures[i].color)
+                    {
+                        case 0:
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_blue[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_blue[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
+                            break;
+                        case 1:
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_red[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_red[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
+                            break;
+                        case 2:
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_yellow[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_yellow[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
+                            break;
+                        case 3:
+                                if (PosGar.positions_garage_green[figures[i].relPos-40].xPos == posToCheck.xPos &&
+                                    PosGar.positions_garage_green[figures[i].relPos-40].yPos == posToCheck.yPos)
+                                    return i;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if (figures[i].relPos < 0)
+                {
+                    switch (figures[i].color)
+                    {
+                        case 0:
+                            if (PosHome.positions_home_blue[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_blue[i].yPos == posToCheck.yPos)
+                                return i;
+                            break;
+                        case 1:
+                            if (PosHome.positions_home_red[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_red[i].yPos == posToCheck.yPos)
+                                return i;
+                            break;
+                        case 2:
+                            if (PosHome.positions_home_yellow[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_yellow[i].yPos == posToCheck.yPos)
+                                return i;
+                            break;
+                        case 3:
+                            if (PosHome.positions_home_green[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_green[i].yPos == posToCheck.yPos)
+                                return i;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    if ((figures[i].relPos + figures[i].diff) > 39)
+                    {
+                        absolutePos[i] = figures[i].relPos + figures[i].diff - 40;
+                    }
+                    else
+                    {
+                        absolutePos[i] = figures[i].relPos + figures[i].diff;
+                    }
+                    if (positions[absolutePos[i]].xPos == posToCheck.xPos &&
+                        positions[absolutePos[i]].yPos == posToCheck.yPos)
+                    {
+                        return i;
+                    }
+                }
+                
+            }
+            return -1;
+        }
         public Positions()
         {
             fillPositions();
         }
-
+        /// <summary>
+        /// fills in the needed Positions on the Board 
+        /// </summary>
         public void fillPositions()
         {
             positions[0] = new Pos(PosConst.xPos_6, PosConst.yPos_0);

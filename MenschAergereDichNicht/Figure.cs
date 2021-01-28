@@ -8,13 +8,31 @@ namespace MenschAergereDichNicht
 {
     class Figure
     {
-        int relPos;
-        int color;
+        internal int relPos;
+        internal int color;
+        internal int diff;
 
         public Figure(int _relPos, int _color)
         {
             relPos = _relPos;
             color = _color;
+            switch (color)
+            {
+                case 0:
+                    diff = 0;
+                    break;
+                case 1:
+                    diff = 10;
+                    break;
+                case 2:
+                    diff = 20;
+                    break;
+                case 3:
+                    diff = 30;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

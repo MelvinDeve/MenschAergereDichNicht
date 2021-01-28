@@ -16,13 +16,13 @@ namespace MenschAergereDichNicht
     }
     class PositionHome
     {
-        Pos[] positions_home_blue = new Pos[4];
-        Pos[] positions_home_red = new Pos[4];
-        Pos[] positions_home_yellow = new Pos[4];
-        Pos[] positions_home_green = new Pos[4];
-        Pos defaultPosition = new Pos(0, 0);
+        public Pos[] positions_home_blue = new Pos[4];
+        public Pos[] positions_home_red = new Pos[4];
+        public Pos[] positions_home_yellow = new Pos[4];
+        public Pos[] positions_home_green = new Pos[4];
+        public Pos defaultPosition = new Pos(0, 0);
 
-        Pos GetHomeCoord(int pinNum, int pos, int col)
+        public Pos GetHomeCoord(int pinNum, int pos, int col)
         {
             switch (col)
             {
@@ -39,13 +39,28 @@ namespace MenschAergereDichNicht
             }
 
         }
-
-        int numberInHouse(List<Button> figures, int color)
+        /// <summary>
+        /// Checks the Number of Pins which are still in Home 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <returns></returns>
+        public int numberInHouse(Figure[] figures)
         {
-            //TO DO: gibt die anzahl an figuren die im Haus sind zurueck
-            return 0;
+            int count = 0;
+            foreach (Figure figure in figures)
+            {
+                if (figure.relPos < 0)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
+        public PositionHome()
+        {
+            fillHomePositions();
+        }
 
         
 

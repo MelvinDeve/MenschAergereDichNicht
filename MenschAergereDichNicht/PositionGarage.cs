@@ -9,13 +9,19 @@ namespace MenschAergereDichNicht
 {
     class PositionGarage
     {
-        Pos[] positions_garage_blue = new Pos[4];
-        Pos[] positions_garage_red = new Pos[4];
-        Pos[] positions_garage_yellow = new Pos[4];
-        Pos[] positions_garage_green = new Pos[4];
-        Pos defaultPosition = new Pos(0, 0);
+        public Pos[] positions_garage_blue = new Pos[4];
+        public Pos[] positions_garage_red = new Pos[4];
+        public Pos[] positions_garage_yellow = new Pos[4];
+        public Pos[] positions_garage_green = new Pos[4];
+        public Pos defaultPosition = new Pos(0, 0);
 
-        Pos GetHomeCoord(int pos, int col)
+        
+        public PositionGarage()
+        {
+            fillGaragePositions();
+        }
+
+        Pos GetGarageCoord(int pos, int col)
         {
             switch (col)
             {
@@ -32,14 +38,28 @@ namespace MenschAergereDichNicht
             }
 
         }
-
-        int numberImmoveable(List<Button> figures, int color)
+        /// <summary>
+        /// returns the number of immoveable figures 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <returns></returns>
+        public int numberImmoveable(Figure[] figures)
         {
-            //TO DO: gibt die anzahl an figuren die in der Garage an ihrer finalen Position sind zurueck
-            return 0;
+        int finalPos = 43;
+        int count = 0;
+            for(int i = 0; i < 4; i++)
+            {
+                if (figures[i].relPos == (finalPos + figures[i].diff))
+                {
+                    count++;
+                    finalPos--;
+                    i = 0;
+                }
+            }
+            return count;
         }
 
-        void fillGaragePositions()
+        public void fillGaragePositions()
         {
             positions_garage_blue[0] = new Pos(PosConst.xPos_5, PosConst.yPos_1);
             positions_garage_blue[1] = new Pos(PosConst.xPos_5, PosConst.yPos_2);
