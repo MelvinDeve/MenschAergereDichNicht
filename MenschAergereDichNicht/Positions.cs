@@ -42,13 +42,28 @@ namespace MenschAergereDichNicht
         {
             return positions[pos];
         }
-
-        bool jemandVorHaus(List<Button> figures, int color)
+        /// <summary>
+        /// Checks if a Pin of the same color is on a projected Position
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        bool checkSameColPos(List<Figure> figures, int position)
         {
-            //TO DO: schaut ob jemand von der eigenen farbe direkt vor dem haus steht sodass keiner raus kann
+            foreach(Figure figure in figures)
+            {
+                if (figure.relPos == position) 
+                {
+                    return true;
+                }
+            }
             return false;
         }
-
+        /// <summary>
+        /// returns index of a given Position 
+        /// </summary>
+        /// <param name="th"></param>
+        /// <returns></returns>
         public int GetPos(Thickness th)
         {
             for(int i = 0; i<39; i++)
@@ -60,7 +75,12 @@ namespace MenschAergereDichNicht
             }
             return -1;
         }
-
+        /// <summary>
+        /// increments Position by given amount
+        /// </summary>
+        /// <param name="currentPos"></param>
+        /// <param name="diceNumber"></param>
+        /// <returns></returns>
         public int incrementPosition(int currentPos, int diceNumber)
         {
             int returnPos = currentPos + diceNumber;
@@ -75,7 +95,9 @@ namespace MenschAergereDichNicht
         {
             fillPositions();
         }
-
+        /// <summary>
+        /// fills in the needed Positions on the Board 
+        /// </summary>
         public void fillPositions()
         {
             positions[0] = new Pos(PosConst.xPos_6, PosConst.yPos_0);

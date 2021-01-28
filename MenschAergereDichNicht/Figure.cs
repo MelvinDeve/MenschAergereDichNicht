@@ -8,8 +8,8 @@ namespace MenschAergereDichNicht
 {
     class Figure
     {
-        int relPos;
-        int color;
+        internal int relPos;
+        internal int color;
 
         public Figure(int _relPos, int _color)
         {
