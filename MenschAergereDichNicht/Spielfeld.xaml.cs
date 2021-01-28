@@ -168,16 +168,65 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure,  int color)
         {
-            int selectedFigure = 0;
-            if(aktZug.zugstatus == Zugstatus.rausgehen)
+            int selectedFigure = fieldPositions.whichFigure(getAktFigures(), figure.Margin);
+            if (aktZug.zugstatus == Zugstatus.rausgehen)
             {
-                 if(getAktFigures()[selectedFigure].relPos<0){
+                if (getAktFigures()[selectedFigure].relPos < 0)
+                {
                     getAktFigures()[selectedFigure].relPos = 0;
                     aktZug.zugstatus = Zugstatus.ersterWurf;
-                    return;
-                 }else if ()
+                }
+                else
                 {
-
+                    //nachricht: du musst raus
+                }
+            }
+            else if (aktZug.zugstatus == Zugstatus.vorHausWegziehen)
+            {
+                if (getAktFigures()[selectedFigure].relPos == 0)
+                {
+                    getAktFigures()[selectedFigure].relPos += rolledDice;
+                }
+                else
+                {
+                    //nachricht: du musst weg vorm Haus
+                }
+            }else if(aktZug.zugstatus == Zugstatus.ziehen)
+            {
+                if (getAktFigures()[selectedFigure].relPos > 0 && (getAktFigures()[selectedFigure].relPos + rolledDice)<40 
+                    && !fieldPositions.checkSameColPos(getAktFigures(), getAktFigures()[selectedFigure].relPos+rolledDice))
+                {
+                    getAktFigures()[selectedFigure].relPos += rolledDice;
+                    if (rolledDice == 6)
+                    {
+                        aktZug.zugstatus = Zugstatus.ersterWurf;
+                    }
+                    else
+                    {
+                        aktZug.zugstatus = Zugstatus.naechsterSpieler;
+                    }
+                }else if (getAktFigures()[selectedFigure].relPos > 40 && getAktFigures()[selectedFigure].relPos < 43)
+                {
+                    bool zulaessigInGarage = true;
+                    for(int tempPos = 40; tempPos <= getAktFigures()[selectedFigure].relPos+rolledDice; tempPos++)
+                    {
+                        if(fieldPositions.checkSameColPos(getAktFigures(), tempPos))
+                        {
+                            zulaessigInGarage = false;
+                        }
+                    }
+                    if (zulaessigInGarage)
+                    {
+                        getAktFigures()[selectedFigure].relPos += rolledDice;
+                        if (rolledDice == 6)
+                        {
+                            aktZug.zugstatus = Zugstatus.ersterWurf;
+                        }
+                        else
+                        {
+                            aktZug.zugstatus = Zugstatus.naechsterSpieler;
+                        }
+                    }
                 }
             }
             /*
