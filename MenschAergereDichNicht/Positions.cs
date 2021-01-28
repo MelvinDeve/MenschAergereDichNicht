@@ -124,7 +124,7 @@ namespace MenschAergereDichNicht
             return returnPos;
         }
 
-        public int wichFigure(Figure[] figures, Pos posToCheck)
+        public int whichFigure(Figure[] figures, Pos posToCheck)
         {
             for (int i = 0; i < 4; i++)
             {
