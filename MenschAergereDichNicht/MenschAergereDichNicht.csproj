@@ -64,9 +64,6 @@
     <Compile Include="Regeln.xaml.cs">
       <DependentUpon>Regeln.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Regeln2.xaml.cs">
-      <DependentUpon>Regeln2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Spielfeld.xaml.cs">
       <DependentUpon>Spielfeld.xaml</DependentUpon>
     </Compile>
@@ -89,10 +86,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Regeln.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Regeln2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
