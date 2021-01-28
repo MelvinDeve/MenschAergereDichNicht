@@ -91,6 +91,17 @@ namespace MenschAergereDichNicht
             return returnPos;
         }
 
+        public int wichFigure(Figure[] figures, Pos posToCheck)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (positions[(figures[i].relPos)] == posToCheck)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
         public Positions()
         {
             fillPositions();
