@@ -59,7 +59,11 @@ namespace MenschAergereDichNicht
             }
             return false;
         }
-
+        /// <summary>
+        /// returns index of a given Position 
+        /// </summary>
+        /// <param name="th"></param>
+        /// <returns></returns>
         public int GetPos(Thickness th)
         {
             for(int i = 0; i<39; i++)
@@ -71,7 +75,12 @@ namespace MenschAergereDichNicht
             }
             return -1;
         }
-
+        /// <summary>
+        /// increments Position by given amount
+        /// </summary>
+        /// <param name="currentPos"></param>
+        /// <param name="diceNumber"></param>
+        /// <returns></returns>
         public int incrementPosition(int currentPos, int diceNumber)
         {
             int returnPos = currentPos + diceNumber;
@@ -86,7 +95,9 @@ namespace MenschAergereDichNicht
         {
             fillPositions();
         }
-
+        /// <summary>
+        /// fills in the needed Positions on the Board 
+        /// </summary>
         public void fillPositions()
         {
             positions[0] = new Pos(PosConst.xPos_6, PosConst.yPos_0);
