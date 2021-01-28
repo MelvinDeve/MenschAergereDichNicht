@@ -66,6 +66,7 @@ namespace MenschAergereDichNicht
             }
             aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
             aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
+            LblAusgabe.Content = "Du bist dran";
         }
 
         /// <summary>
@@ -76,11 +77,13 @@ namespace MenschAergereDichNicht
         /// <param name="e"></param>
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
+            
             if (aktZug.zugstatus <= Zugstatus.hausVoll3 && aktZug.zugstatus>Zugstatus.spielVorbei)
             {
                 Random dice = new Random();
                 int number;
 
+                
 
                 number = dice.Next(1, 7);
 
@@ -108,6 +111,15 @@ namespace MenschAergereDichNicht
 
                 rolledDice = number;
 
+                if (number != prevnum)
+                {
+                    LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
+                }
+                else
+                {
+                    LblAusgabe.Content = "Schon wieder eine " + number + "!";
+                }
+
                 zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
                 if (aktZug.zugstatus == Zugstatus.naechsterSpieler)
                 {
@@ -117,10 +129,7 @@ namespace MenschAergereDichNicht
                 aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
                 aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
 
-                if (number != prevnum)
-                    LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
-                else
-                    LblAusgabe.Content = "Schon wieder eine " + number + "!";
+                
 
 
                 prevnum = number;
@@ -217,6 +226,10 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure,  int color)
         {
+            if (aktZug.zugstatus == Zugstatus.spielVorbei)
+            {
+                return;
+            }
             if (aktZug.zugstatus > Zugstatus.hausVoll3 && color == Spieler[aktZug.spieler].Farbe) { 
             int selectedFigure = fieldPositions.whichFigure(getAktFigures(), figure.Margin);
                 if (aktZug.zugstatus == Zugstatus.rausgehen)
@@ -226,7 +239,6 @@ namespace MenschAergereDichNicht
                         getAktFigures()[selectedFigure].relPos = 0;
                         drawFigure(figure, selectedFigure);
                         aktZug.zugstatus = Zugstatus.ersterWurf;
-                        
                     }
                     else
                     {
@@ -294,7 +306,10 @@ namespace MenschAergereDichNicht
                         {
                             getAktFigures()[selectedFigure].relPos += rolledDice;
                             drawFigure(figure, selectedFigure);
-                            if (rolledDice == 6)
+                            if (aktZug.zugstatus == Zugstatus.spielVorbei)
+                            {
+                                return;
+                            }else if (rolledDice == 6)
                             {
                                 aktZug.zugstatus = Zugstatus.ersterWurf;
                             }
@@ -367,7 +382,7 @@ namespace MenschAergereDichNicht
                         }
                         break;
                 }
-                fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]);
+                //fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]);
             }
 
             int winSum = 0;
@@ -379,7 +394,6 @@ namespace MenschAergereDichNicht
             if (winSum == 166)
             {
                 aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + " hat Gewonnen!!!!!!!!";
-                aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
                 aktZug.zugstatus = Zugstatus.spielVorbei;
             }
         }

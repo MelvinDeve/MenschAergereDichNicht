@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
         Icon="Assets/icon.png"
-        Title="Hauptmenü" Height="460" Width="910">
+        
+        Title="Hauptmenü" MaxHeight="460" MaxWidth="910" MinHeight="460" MinWidth="910">
     <Grid x:Name="Hauptmenu">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>

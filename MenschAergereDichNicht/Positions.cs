@@ -162,6 +162,7 @@ namespace MenschAergereDichNicht
                     {
                         tempRelPos -= 1;
                         fertig = false;
+                        break;
                     }
                 }
             }
@@ -306,28 +307,19 @@ namespace MenschAergereDichNicht
                     switch (figures[i].color)
                     {
                         case 0:
-                            for (int j = 0; j < 4; j++)
-                            {
                                 if (PosGar.positions_garage_blue[figures[i].relPos - 40].xPos == posToCheck.xPos &&
                                 PosGar.positions_garage_blue[figures[i].relPos - 40].yPos == posToCheck.yPos)
                                     return i;
-                            }
                             break;
                         case 1:
-                            for (int j = 0; j < 4; j++)
-                            {
                                 if (PosGar.positions_garage_red[figures[i].relPos - 40].xPos == posToCheck.xPos &&
                                 PosGar.positions_garage_red[figures[i].relPos - 40].yPos == posToCheck.yPos)
                                     return i;
-                            }
                             break;
                         case 2:
-                            for (int j = 0; j < 4; j++)
-                            {
                                 if (PosGar.positions_garage_yellow[figures[i].relPos - 40].xPos == posToCheck.xPos &&
                                 PosGar.positions_garage_yellow[figures[i].relPos - 40].yPos == posToCheck.yPos)
                                     return i;
-                            }
                             break;
                         case 3:
                                 if (PosGar.positions_garage_green[figures[i].relPos-40].xPos == posToCheck.xPos &&
@@ -343,24 +335,36 @@ namespace MenschAergereDichNicht
                     switch (figures[i].color)
                     {
                         case 0:
-                            if (PosHome.positions_home_blue[i].xPos == posToCheck.xPos &&
-                                PosHome.positions_home_blue[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosHome.positions_home_blue[j].xPos == posToCheck.xPos &&
+                                    PosHome.positions_home_blue[j].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 1:
-                            if (PosHome.positions_home_red[i].xPos == posToCheck.xPos &&
-                                PosHome.positions_home_red[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosHome.positions_home_red[j].xPos == posToCheck.xPos &&
+                                    PosHome.positions_home_red[j].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 2:
-                            if (PosHome.positions_home_yellow[i].xPos == posToCheck.xPos &&
-                                PosHome.positions_home_yellow[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosHome.positions_home_yellow[j].xPos == posToCheck.xPos &&
+                                    PosHome.positions_home_yellow[j].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 3:
-                            if (PosHome.positions_home_green[i].xPos == posToCheck.xPos &&
-                                PosHome.positions_home_green[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosHome.positions_home_green[j].xPos == posToCheck.xPos &&
+                                    PosHome.positions_home_green[j].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         default:
                             break;

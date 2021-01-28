@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MenschAergereDichNicht"
         mc:Ignorable="d"
         Icon="Assets/icon.png"
-        Title="Neues Spiel" Height="450" Width="800">
+        Title="Neues Spiel" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800">
     <Grid x:Name="NeuesSpiel1">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
