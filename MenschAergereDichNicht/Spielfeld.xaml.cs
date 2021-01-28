@@ -116,52 +116,6 @@ namespace MenschAergereDichNicht
 
         }
 
-        /*
-        private void Dice_Click(object sender, RoutedEventArgs e)
-        {
-            if (aktZug.zugstatus <= Zugstatus.hausVoll3)
-            {
-                Random dice = new Random();
-                int number;
-
-                number = dice.Next(1, 7);
-
-                switch (number)
-                {
-                    case 1:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
-                        break;
-                    case 2:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border2.png", UriKind.Relative));
-                        break;
-                    case 3:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border3.png", UriKind.Relative));
-                        break;
-                    case 4:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border4.png", UriKind.Relative));
-                        break;
-                    case 5:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border5.png", UriKind.Relative));
-                        break;
-                    case 6:
-                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border6.png", UriKind.Relative));
-                        break;
-                }
-
-                rolledDice = number;
-
-                zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
-                if(aktZug.zugstatus == Zugstatus.naechsterSpieler)
-                {
-                    aktZug.zugstatus = Zugstatus.ersterWurf;
-                    nextPlayer();
-                }
-                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
-
-            }
-        }
-        */
-
         private Figure[] getAktFigures()
         {
             switch (Spieler[aktZug.spieler].Farbe)
