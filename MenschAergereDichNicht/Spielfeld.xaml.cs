@@ -168,14 +168,17 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure,  int color)
         {
-            int selectedFigure;
+            int selectedFigure = 0;
             if(aktZug.zugstatus == Zugstatus.rausgehen)
             {
-                /*
-                 *if(geklickteFigurImHaus){
-                 *   geklickteFigur.relPos = 0;
-                 *}
-                 */
+                 if(getAktFigures()[selectedFigure].relPos<0){
+                    getAktFigures()[selectedFigure].relPos = 0;
+                    aktZug.zugstatus = Zugstatus.ersterWurf;
+                    return;
+                 }else if ()
+                {
+
+                }
             }
             /*
             if (aktZug.zugstatus == Zugstatus.ziehen)
