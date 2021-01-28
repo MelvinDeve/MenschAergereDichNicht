@@ -45,7 +45,13 @@ namespace MenschAergereDichNicht
 
         bool checkSameColPos(List<Figure> figures, int position)
         {
-            //TO DO: schaut ob jemand von der eigenen farbe direkt vor dem haus steht sodass keiner raus kann
+            foreach(Figure figure in figures)
+            {
+                if (figure.relPos == position) 
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
