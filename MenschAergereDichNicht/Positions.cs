@@ -77,29 +77,69 @@ namespace MenschAergereDichNicht
             return PosHome.defaultPosition;
         }
 
-        //public Pos SendHome(Figure fig)
-        //{
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        switch (fig.color)
-        //        {
-        //            case 0:
-        //                return PosHome.positions_home_blue[fig.relPos - 39];
-        //            case 1:
-        //                return PosHome.positions_home_red[fig.relPos - 39];
-        //            case 2:
-        //                return PosHome.positions_home_yellow[fig.relPos - 39];
-        //            case 3:
-        //                return PosHome.positions_home_green[fig.relPos - 39];
-        //            default:
-        //                break;
-        //        }
-        //    }
+        public Pos SendHome(Figure[] figures, Figure fig)
+        {
 
+            int freespace = 0;
             
-
-        //    return PosHome.defaultPosition;
-        //}
+                switch (fig.color)
+                {
+                    case 0:
+                        for (int j = 0; j < 4; j++)
+                        {
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_blue[i].xPos &&
+                                    GetCoord(figures[j]).yPos == PosHome.positions_home_blue[i].yPos)
+                                {
+                                    freespace++;
+                                }
+                            }      
+                        }
+                        return PosHome.positions_home_blue[freespace];
+                    case 1:
+                        for (int j = 0; j < 4; j++)
+                        {
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_red[i].xPos &&
+                                    GetCoord(figures[j]).yPos == PosHome.positions_home_red[i].yPos)
+                                {
+                                    freespace++;
+                                }
+                            }
+                        }
+                        return PosHome.positions_home_red[freespace];
+                    case 2:
+                        for (int j = 0; j < 4; j++)
+                        {
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_yellow[i].xPos &&
+                                    GetCoord(figures[j]).yPos == PosHome.positions_home_yellow[i].yPos)
+                                {
+                                    freespace++;
+                                }
+                            }
+                        }
+                        return PosHome.positions_home_yellow[freespace];
+                    case 3:
+                        for (int j = 0; j < 4; j++)
+                        {
+                            for (int i = 0; i < 4; i++)
+                            {
+                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_green[i].xPos &&
+                                    GetCoord(figures[j]).yPos == PosHome.positions_home_green[i].yPos)
+                                {
+                                    freespace++;
+                                }
+                            }
+                        }
+                        return PosHome.positions_home_green[freespace];
+                    default:
+                        return PosHome.defaultPosition;
+                }
+        }
 
 
         /// <summary>
