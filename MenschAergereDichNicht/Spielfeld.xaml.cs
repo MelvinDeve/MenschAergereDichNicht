@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,8 +20,11 @@ namespace MenschAergereDichNicht
     /// <summary>
     /// Interaction logic for Spielfeld.xaml
     /// </summary>
+
+    
     public partial class Spielfeld : Window
     {
+        int prevnum = -1;
         List<Player> Spieler = new List<Player>();
         Positions fieldPositions = new Positions();
         Spielzug aktZug = new Spielzug();
@@ -40,16 +46,21 @@ namespace MenschAergereDichNicht
             yellowFigures = new Figure[4] { new Figure(-1, ColConst.col_yellow), new Figure(-2, ColConst.col_yellow), new Figure(-3, ColConst.col_yellow), new Figure(-4, ColConst.col_yellow) };
             //zugkontrolle = new Zugkontrolle(greenFigures, redFigures, blueFigures, yellowFigures);
             InitializeComponent();
+           
         }
+
+        
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-                Random dice = new Random();
-                int number;
 
-                number = dice.Next(1, 7);
-
-                switch (number)
+            Random dice = new Random();
+            int number;
+            
+            
+            number = dice.Next(1, 7);
+            
+            switch (number)
                 {
                     case 1:
                         ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
@@ -72,8 +83,14 @@ namespace MenschAergereDichNicht
                 }
 
                 rolledDice = number;
-                LblAusgabe.Content = "Es wurde eine " + number + " geworfen!";
-            
+                
+                if(number != prevnum)
+                LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
+                else
+                LblAusgabe.Content = "Schon wieder eine " + number + "!";
+                 
+               
+                 prevnum = number;
 
         }
 

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Icon="Assets/icon.png"
         Title="Spielfeld" Height="450" Width="800">
-
+    
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
             <Setter Property="Template">
@@ -78,11 +78,14 @@
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
-        <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198,236,-237,-259" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" />
+        <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198, 236, -237, -259" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" >
+         
+            </Image>
         </Button>
+        
         <Label x:Name="LblAusgabe" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="87,48,0,0" VerticalAlignment="Top" Width="193"/>
-
+        
 
 
     </Grid>
