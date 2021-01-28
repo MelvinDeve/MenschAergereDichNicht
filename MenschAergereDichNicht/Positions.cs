@@ -41,10 +41,67 @@ namespace MenschAergereDichNicht
 
         Pos[] positions = new Pos[40];
         Pos defaultPosition = new Pos(0, 0);
-        public Pos GetCoord(int pos)
+
+        public Pos GetCoord(Figure fig)
         {
-            return positions[pos];
+            int absolutePos;
+
+            if (fig.relPos <= 39 && fig.relPos > 0)
+            {
+                if ((fig.relPos + fig.diff) >= 39)
+                {
+                    absolutePos = fig.relPos + fig.diff - 39;
+                }
+                else
+                {
+                    absolutePos = fig.relPos + fig.diff;
+                }
+                return positions[absolutePos];
+            }
+            else if (fig.relPos > 39)
+            {
+                switch (fig.color)
+                {
+                    case 0:
+                        return PosHome.positions_home_blue[fig.relPos - 39];
+                    case 1:
+                        return PosHome.positions_home_red[fig.relPos - 39];
+                    case 2:
+                        return PosHome.positions_home_yellow[fig.relPos - 39];
+                    case 3:
+                        return PosHome.positions_home_green[fig.relPos - 39];
+                    default:
+                        break;
+                }
+            }
+            return PosHome.defaultPosition;
         }
+
+        //public Pos SendHome(Figure fig)
+        //{
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        switch (fig.color)
+        //        {
+        //            case 0:
+        //                return PosHome.positions_home_blue[fig.relPos - 39];
+        //            case 1:
+        //                return PosHome.positions_home_red[fig.relPos - 39];
+        //            case 2:
+        //                return PosHome.positions_home_yellow[fig.relPos - 39];
+        //            case 3:
+        //                return PosHome.positions_home_green[fig.relPos - 39];
+        //            default:
+        //                break;
+        //        }
+        //    }
+
+            
+
+        //    return PosHome.defaultPosition;
+        //}
+
+
         /// <summary>
         /// Checks if a Pin of the same color is on a projected Position
         /// </summary>
