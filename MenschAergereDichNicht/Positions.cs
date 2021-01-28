@@ -124,11 +124,12 @@ namespace MenschAergereDichNicht
             return returnPos;
         }
 
-        public int wichFigure(Figure[] figures, Pos posToCheck)
+        public int whichFigure(Figure[] figures, Thickness marginToCheck)
         {
+            Pos posToCheck = new Pos(marginToCheck.Left, marginToCheck.Top);
             for (int i = 0; i < 4; i++)
             {
-                if (positions[(figures[i].relPos)] == posToCheck)
+                if (positions[(figures[i].relPos)+figures[i].diff] == posToCheck)
                 {
                     return i;
                 }
