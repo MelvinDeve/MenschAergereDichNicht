@@ -22,7 +22,7 @@ namespace MenschAergereDichNicht
             yellowFigures = _yellowFigures;
         }
 
-        public void checkWurf(Spielzug aktZug, int diceRoll)
+        public void checkWurf(Spielzug aktZug, int diceRoll, Figure[] figures)
         {
             /*
              * if(geworfen==6 && Min 1 im Haus && keiner vor haus){
