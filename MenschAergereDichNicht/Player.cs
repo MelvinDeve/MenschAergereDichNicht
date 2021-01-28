@@ -8,8 +8,8 @@ namespace MenschAergereDichNicht
 {
     class Player
     {
-        String Name;
-        int Farbe;
+        internal String Name { get; }
+        internal int Farbe { get; }
 
         public Player(String _Name, int _Farbe)
         {

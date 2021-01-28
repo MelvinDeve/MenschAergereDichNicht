@@ -9,21 +9,36 @@ namespace MenschAergereDichNicht
 {
     class Zugkontrolle
     {
-        List<Button> greenFigures;
-        List<Button> redFigures;
-        List<Button> blueFigures;
-        List<Button> yellowFigures;
-
-        public Zugkontrolle(List<Button> _greenFigures, List<Button> _redFigures, List<Button> _blueFigures, List<Button> _yellowFigures)
-        {
-            greenFigures = _greenFigures;
-            redFigures = _redFigures;
-            blueFigures = _blueFigures;
-            yellowFigures = _yellowFigures;
-        }
+        PositionHome home = new PositionHome();
+        Positions playField = new Positions();
+       
 
         public void checkWurf(Spielzug aktZug, int diceRoll, Figure[] figures)
         {
+            if(diceRoll == 6 && home.numberInHouse(figures) > 0 && !playField.checkSameColPos(figures, 0))
+            {
+                aktZug.zugstatus = Zugstatus.rausgehen;
+            }else if(playField.checkSameColPos(figures, 0) && !playField.checkSameColPos(figures, 0+diceRoll))
+            {
+                aktZug.zugstatus = Zugstatus.rausgehen;
+            }else if (home.numberInHouse(figures)/*+anEndstation*/ == 4)
+            {
+                if(aktZug.zugstatus == Zugstatus.hausVoll3)
+                {
+                    aktZug.zugstatus = Zugstatus.naechsterSpieler;
+                }
+                else
+                {
+                    aktZug.zugstatus++;
+                }
+            }else if (playField.anzFigurenZugfaehig(figures, diceRoll)==0)
+            {
+                aktZug.zugstatus = Zugstatus.naechsterSpieler;
+            }
+            else
+            {
+                aktZug.zugstatus = Zugstatus.ziehen;
+            }
             /*
              * if(geworfen==6 && Min 1 im Haus && keiner vor haus){
              *      zugstatus = rausziehen;

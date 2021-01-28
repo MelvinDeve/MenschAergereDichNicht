@@ -48,7 +48,7 @@ namespace MenschAergereDichNicht
         /// <param name="figures"></param>
         /// <param name="position"></param>
         /// <returns></returns>
-        bool checkSameColPos(List<Figure> figures, int position)
+        public bool checkSameColPos(Figure[] figures, int position)
         {
             foreach(Figure figure in figures)
             {
@@ -75,6 +75,39 @@ namespace MenschAergereDichNicht
             }
             return -1;
         }
+
+        public int anzFigurenZugfaehig(Figure[] figures, int diceRoll)
+        {
+            bool tempZugfaehig;
+            int zugfaehig = 0;
+            foreach (Figure figure in figures)
+            {
+                tempZugfaehig = true;
+                if (figure.relPos >= 0)
+                {
+                    if (figure.relPos + diceRoll > 43)
+                    {
+                        tempZugfaehig = false;
+                    }
+                    else
+                    {
+                        foreach (Figure secondFigure in figures)
+                        {
+                            if (figure.relPos + diceRoll == secondFigure.relPos)
+                            {
+                                tempZugfaehig = false;
+                            }
+                        }
+                    }
+                }
+                if (tempZugfaehig)
+                {
+                    zugfaehig++;
+                }
+            }
+            return zugfaehig;
+        }
+
         /// <summary>
         /// increments Position by given amount
         /// </summary>

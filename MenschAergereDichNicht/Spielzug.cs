@@ -13,6 +13,9 @@ namespace MenschAergereDichNicht
         public const int hausVoll3 = 2;
         public const int ziehen = 3;
         public const int ziehen6geworfen = 4;
+        public const int rausgehen = 5;
+        public const int vorHausWegziehen = 6;
+        public const int naechsterSpieler = 7;
     }
     class Spielzug
     {

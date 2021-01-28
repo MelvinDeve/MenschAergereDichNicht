@@ -22,7 +22,7 @@ namespace MenschAergereDichNicht
         Pos[] positions_home_green = new Pos[4];
         Pos defaultPosition = new Pos(0, 0);
 
-        Pos GetHomeCoord(int pinNum, int pos, int col)
+        public Pos GetHomeCoord(int pinNum, int pos, int col)
         {
             switch (col)
             {
@@ -44,7 +44,7 @@ namespace MenschAergereDichNicht
         /// </summary>
         /// <param name="figures"></param>
         /// <returns></returns>
-        int numberInHouse(List<Figure> figures)
+        public int numberInHouse(Figure[] figures)
         {
             int count = 0;
             foreach (Figure figure in figures)
@@ -57,6 +57,10 @@ namespace MenschAergereDichNicht
             return count;
         }
 
+        public PositionHome()
+        {
+            fillHomePositions();
+        }
 
         
 

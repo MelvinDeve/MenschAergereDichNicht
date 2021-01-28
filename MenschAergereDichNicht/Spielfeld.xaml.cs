@@ -26,7 +26,7 @@ namespace MenschAergereDichNicht
         Figure[] redFigures;
         Figure[] blueFigures;
         Figure[] yellowFigures;
-        Zugkontrolle zugkontrolle;
+        Zugkontrolle zugkontrolle = new Zugkontrolle();
 
         int rolledDice = -1;
         public Spielfeld()
@@ -38,12 +38,14 @@ namespace MenschAergereDichNicht
             redFigures = new Figure[4] { new Figure(-1, ColConst.col_red), new Figure(-2, ColConst.col_red), new Figure(-3, ColConst.col_red), new Figure(-4, ColConst.col_red) };
             blueFigures = new Figure[4] { new Figure(-1, ColConst.col_blue), new Figure(-2, ColConst.col_blue), new Figure(-3, ColConst.col_blue), new Figure(-4, ColConst.col_blue) };
             yellowFigures = new Figure[4] { new Figure(-1, ColConst.col_yellow), new Figure(-2, ColConst.col_yellow), new Figure(-3, ColConst.col_yellow), new Figure(-4, ColConst.col_yellow) };
-            //zugkontrolle = new Zugkontrolle(greenFigures, redFigures, blueFigures, yellowFigures);
+          
             InitializeComponent();
         }
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
+            if (aktZug.zugstatus < Zugstatus.hausVoll3)
+            {
                 Random dice = new Random();
                 int number;
 
@@ -72,81 +74,109 @@ namespace MenschAergereDichNicht
                 }
 
                 rolledDice = number;
-            
 
+                zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
+
+            }
+        }
+
+        private Figure[] getAktFigures()
+        {
+            switch (aktZug.spieler.Farbe)
+            {
+                case ColConst.col_blue:
+                    return blueFigures;
+                case ColConst.col_green:
+                    return greenFigures;
+                case ColConst.col_red:
+                    return redFigures;
+                case ColConst.col_yellow:
+                    return yellowFigures;
+                default:
+                    return blueFigures;
+            }
         }
 
         private void btnFigGruen0_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGruen0, rolledDice, ColConst.col_green);
+            moveFigure(btnFigGruen0, ColConst.col_green);
         }
         private void btnFigGruen1_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGruen1, rolledDice, ColConst.col_green);
+            moveFigure(btnFigGruen1, ColConst.col_green);
         }
         private void btnFigGruen2_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGruen2, rolledDice, ColConst.col_green);
+            moveFigure(btnFigGruen2, ColConst.col_green);
         }
         private void btnFigGruen3_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGruen3, rolledDice, ColConst.col_green);
+            moveFigure(btnFigGruen3, ColConst.col_green);
         }
 
         private void btnFigBlau0_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigBlau0, rolledDice, ColConst.col_blue);
+            moveFigure(btnFigBlau0, ColConst.col_blue);
         }
         private void btnFigBlau1_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigBlau1, rolledDice, ColConst.col_blue);
+            moveFigure(btnFigBlau1, ColConst.col_blue);
         }
         private void btnFigBlau2_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigBlau2, rolledDice, ColConst.col_blue);
+            moveFigure(btnFigBlau2, ColConst.col_blue);
         }
         private void btnFigBlau3_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigBlau3, rolledDice, ColConst.col_blue);
+            moveFigure(btnFigBlau3, ColConst.col_blue);
         }
 
         private void btnFigGelb0_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGelb0, rolledDice, ColConst.col_yellow);
+            moveFigure(btnFigGelb0, ColConst.col_yellow);
         }
         private void btnFigGelb1_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGelb1, rolledDice, ColConst.col_yellow);
+            moveFigure(btnFigGelb1, ColConst.col_yellow);
         }
         private void btnFigGelb2_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGelb2, rolledDice, ColConst.col_yellow);
+            moveFigure(btnFigGelb2, ColConst.col_yellow);
         }
         private void btnFigGelb3_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigGelb3, rolledDice, ColConst.col_yellow);
+            moveFigure(btnFigGelb3, ColConst.col_yellow);
         }
 
         private void btnFigRot0_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigRot0, rolledDice, ColConst.col_red);
+            moveFigure(btnFigRot0, ColConst.col_red);
         }
         private void btnFigRot1_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigRot1, rolledDice, ColConst.col_red);
+            moveFigure(btnFigRot1, ColConst.col_red);
         }
         private void btnFigRot2_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigRot2, rolledDice, ColConst.col_red);
+            moveFigure(btnFigRot2, ColConst.col_red);
         }
         private void btnFigRot3_Click(object sender, RoutedEventArgs e)
         {
-            moveFigure(btnFigRot3, rolledDice, ColConst.col_red);
+            moveFigure(btnFigRot3, ColConst.col_red);
 
         }
 
-        private void moveFigure(Button figure, int diceNumber, int color)
+        private void moveFigure(Button figure,  int color)
         {
+            if(aktZug.zugstatus == Zugstatus.rausgehen)
+            {
+                /*
+                 *if(geklickteFigurImHaus){
+                 *   geklickteFigur.relPos = 0;
+                 *}
+                 */
+            }
+            /*
             if (aktZug.zugstatus == Zugstatus.ziehen)
             {
                 if (diceNumber == -1)
@@ -164,6 +194,7 @@ namespace MenschAergereDichNicht
                 Pos newCoord = fieldPositions.GetCoord(newPos);
                 figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
             }
+            */
             
         }
     }
