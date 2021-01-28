@@ -43,7 +43,7 @@ namespace MenschAergereDichNicht
             return positions[pos];
         }
 
-        bool jemandVorHaus(List<Button> figures, int color)
+        bool checkSameColPos(List<Figure> figures, int position)
         {
             //TO DO: schaut ob jemand von der eigenen farbe direkt vor dem haus steht sodass keiner raus kann
             return false;
