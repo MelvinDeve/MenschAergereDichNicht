@@ -50,7 +50,12 @@ namespace MenschAergereDichNicht
         }
 
         
-
+        /// <summary>
+        ///  If you click on the dice, it will roll a number for you. This number is shown to you on the dice, and in a label above there is a text with it aswell.
+        ///  If you roll the same number twice, it say it to you
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
 
