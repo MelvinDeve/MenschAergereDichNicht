@@ -26,62 +26,62 @@
             <ColumnDefinition Width="383*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" HorizontalAlignment="Left" Height="399" Margin="18,16,0,0" VerticalAlignment="Top" Width="410" Source="Assets/Spielfeld.png" Grid.ColumnSpan="2"/>
-        <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="22,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGruen0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen0_Click" Width="26" Height="44" Margin="22,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGruen1" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen1_Click" Width="26" Height="44" Margin="57,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGruen1" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen1_Click" Width="26" Height="44" Margin="57,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGruen2" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen2_Click" Width="26" Height="44" Margin="22,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGruen2" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen2_Click" Width="26" Height="44" Margin="22,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGruen3" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen3_Click" Width="26" Height="44" Margin="57,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGruen3" Style="{StaticResource ImageButtonStyle}" Click="btnFigGruen3_Click" Width="26" Height="44" Margin="57,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceGreen_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
-        <Button Grid.Column="0" x:Name="btnFigBlau0" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau0_Click" Width="26" Height="44" Margin="338,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigBlau0" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau0_Click" Width="26" Height="44" Margin="338,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceBlue_border03.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigBlau1" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau1_Click" Width="26" Height="44" Margin="373,-6,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigBlau1" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau1_Click" Width="26" Height="44" Margin="373,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceBlue_border03.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigBlau2" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau2_Click" Width="26" Height="44" Margin="338,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigBlau2" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau2_Click" Width="26" Height="44" Margin="338,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceBlue_border03.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigBlau3" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau3_Click" Width="26" Height="44" Margin="373,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigBlau3" Style="{StaticResource ImageButtonStyle}" Click="btnFigBlau3_Click" Width="26" Height="44" Margin="373,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceBlue_border03.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
-        <Button Grid.Column="0" x:Name="btnFigGelb0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb0_Click" Width="26" Height="44" Margin="22,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGelb0" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb0_Click" Width="26" Height="44" Margin="22,318,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGelb1" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb1_Click" Width="26" Height="44" Margin="57,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGelb1" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb1_Click" Width="26" Height="44" Margin="57,318,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGelb2" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb2_Click" Width="26" Height="44" Margin="22,348,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGelb2" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb2_Click" Width="26" Height="44" Margin="22,354,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigGelb3" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb3_Click" Width="26" Height="44" Margin="57,348,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigGelb3" Style="{StaticResource ImageButtonStyle}" Click="btnFigGelb3_Click" Width="26" Height="44" Margin="57,354,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceYellow_border01.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
-        <Button Grid.Column="0" x:Name="btnFigRot0" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot0_Click" Width="26" Height="44" Margin="338,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigRot0" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot0_Click" Width="26" Height="44" Margin="338,318,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigRot1" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot1_Click" Width="26" Height="44" Margin="373,312,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigRot1" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot1_Click" Width="26" Height="44" Margin="373,318,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigRot2" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot2_Click" Width="26" Height="44" Margin="338,348,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigRot2" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot2_Click" Width="26" Height="44" Margin="338,354,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
-        <Button Grid.Column="0" x:Name="btnFigRot3" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot3_Click" Width="26" Height="44" Margin="373,348,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button Grid.Column="0" x:Name="btnFigRot3" Style="{StaticResource ImageButtonStyle}" Click="btnFigRot3_Click" Width="26" Height="44" Margin="373,354,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
         <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198,236,-237,-259" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" />
         </Button>
-        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="87,48,0,0" VerticalAlignment="Top" Width="193"/>
+        <Label x:Name="LblAusgabe" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="87,48,0,0" VerticalAlignment="Top" Width="193"/>
 
 
 

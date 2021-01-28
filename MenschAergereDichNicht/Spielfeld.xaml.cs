@@ -72,6 +72,7 @@ namespace MenschAergereDichNicht
                 }
 
                 rolledDice = number;
+                LblAusgabe.Content = "Es wurde eine " + number + " geworfen!";
             
 
         }
