@@ -10,17 +10,17 @@ namespace MenschAergereDichNicht
 {
     static class PosConst
     {
-        public const int yPos_0 = -6;
-        public const int yPos_1 = 30;
-        public const int yPos_2 = 66;
-        public const int yPos_3 = 102;
-        public const int yPos_4 = 138;
-        public const int yPos_5 = 172;
-        public const int yPos_6 = 208;
-        public const int yPos_7 = 242;
-        public const int yPos_8 = 278;
-        public const int yPos_9 = 312;
-        public const int yPos_10 = 348;
+        public const int yPos_0 = 0;
+        public const int yPos_1 = 36;
+        public const int yPos_2 = 72;
+        public const int yPos_3 = 108;
+        public const int yPos_4 = 146;
+        public const int yPos_5 = 178;
+        public const int yPos_6 = 214;
+        public const int yPos_7 = 248;
+        public const int yPos_8 = 284;
+        public const int yPos_9 = 320;
+        public const int yPos_10 = 360;
 
         public const int xPos_0 = 13+9;
         public const int xPos_1 = 48 + 9;
