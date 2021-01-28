@@ -36,6 +36,9 @@ namespace MenschAergereDichNicht
     }
     class Positions
     {
+        PositionGarage PosGar = new PositionGarage();
+        PositionHome PosHome = new PositionHome();
+
         Pos[] positions = new Pos[40];
         Pos defaultPosition = new Pos(0, 0);
         public Pos GetCoord(int pos)
@@ -124,14 +127,76 @@ namespace MenschAergereDichNicht
             return returnPos;
         }
 
-        public int whichFigure(Figure[] figures, Pos posToCheck)
+        public int whichFigure(Figure[] figures, Thickness marginToCheck)
         {
+            Pos posToCheck = new Pos(marginToCheck.Left, marginToCheck.Top);
+            int[] absolutePos = new int[4];
             for (int i = 0; i < 4; i++)
             {
-                if (positions[(figures[i].relPos)] == posToCheck)
+                if (figures[i].relPos > 39)
                 {
-                    return i;
+                    switch (figures[i].color)
+                    {
+                        case 0:
+                            if (PosGar.positions_garage_blue[i] == posToCheck)
+                                return i;
+                            break;
+                        case 1:
+                            if (PosGar.positions_garage_red[i] == posToCheck)
+                                return i;
+                            break;
+                        case 2:
+                            if (PosGar.positions_garage_yellow[i] == posToCheck)
+                                return i;
+                            break;
+                        case 3:
+                            if (PosGar.positions_garage_green[i] == posToCheck)
+                                return i;
+                            break;
+                        default:
+                            break;
+                    }
                 }
+                else if (figures[i].relPos < 0)
+                {
+                    switch (figures[i].color)
+                    {
+                        case 0:
+                            if (PosHome.positions_home_blue[i] == posToCheck)
+                                return i;
+                            break;
+                        case 1:
+                            if (PosHome.positions_home_red[i] == posToCheck)
+                                return i;
+                            break;
+                        case 2:
+                            if (PosHome.positions_home_yellow[i] == posToCheck)
+                                return i;
+                            break;
+                        case 3:
+                            if (PosHome.positions_home_green[i] == posToCheck)
+                                return i;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    if ((figures[i].relPos + figures[i].diff) >= 39)
+                    {
+                        absolutePos[i] = figures[i].relPos + figures[i].diff - 39;
+                    }
+                    else
+                    {
+                        absolutePos[i] = figures[i].relPos + figures[i].diff;
+                    }
+                    if (positions[absolutePos[i]] == posToCheck)
+                    {
+                        return i;
+                    }
+                }
+                
             }
             return -1;
         }

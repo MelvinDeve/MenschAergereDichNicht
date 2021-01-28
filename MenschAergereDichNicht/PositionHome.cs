@@ -16,11 +16,11 @@ namespace MenschAergereDichNicht
     }
     class PositionHome
     {
-        Pos[] positions_home_blue = new Pos[4];
-        Pos[] positions_home_red = new Pos[4];
-        Pos[] positions_home_yellow = new Pos[4];
-        Pos[] positions_home_green = new Pos[4];
-        Pos defaultPosition = new Pos(0, 0);
+        public Pos[] positions_home_blue = new Pos[4];
+        public Pos[] positions_home_red = new Pos[4];
+        public Pos[] positions_home_yellow = new Pos[4];
+        public Pos[] positions_home_green = new Pos[4];
+        public Pos defaultPosition = new Pos(0, 0);
 
         public Pos GetHomeCoord(int pinNum, int pos, int col)
         {

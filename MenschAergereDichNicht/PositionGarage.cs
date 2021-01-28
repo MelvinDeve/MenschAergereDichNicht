@@ -9,13 +9,17 @@ namespace MenschAergereDichNicht
 {
     class PositionGarage
     {
-        Pos[] positions_garage_blue = new Pos[4];
-        Pos[] positions_garage_red = new Pos[4];
-        Pos[] positions_garage_yellow = new Pos[4];
-        Pos[] positions_garage_green = new Pos[4];
-        Pos defaultPosition = new Pos(0, 0);
+        public Pos[] positions_garage_blue = new Pos[4];
+        public Pos[] positions_garage_red = new Pos[4];
+        public Pos[] positions_garage_yellow = new Pos[4];
+        public Pos[] positions_garage_green = new Pos[4];
+        public Pos defaultPosition = new Pos(0, 0);
 
         
+        public PositionGarage()
+        {
+            fillGaragePositions();
+        }
 
         Pos GetGarageCoord(int pos, int col)
         {
@@ -55,7 +59,7 @@ namespace MenschAergereDichNicht
             return count;
         }
 
-        void fillGaragePositions()
+        public void fillGaragePositions()
         {
             positions_garage_blue[0] = new Pos(PosConst.xPos_5, PosConst.yPos_1);
             positions_garage_blue[1] = new Pos(PosConst.xPos_5, PosConst.yPos_2);
