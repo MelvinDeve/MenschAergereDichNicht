@@ -24,10 +24,6 @@ namespace MenschAergereDichNicht
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Regeln2 regeln2 = new Regeln2();
-            regeln2.ShowDialog();
-        }
+       
     }
 }

@@ -42,5 +42,10 @@ namespace MenschAergereDichNicht
             NeuesSpiel laden = new NeuesSpiel();
             laden.ShowDialog();
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
