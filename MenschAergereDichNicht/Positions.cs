@@ -42,7 +42,12 @@ namespace MenschAergereDichNicht
         {
             return positions[pos];
         }
-
+        /// <summary>
+        /// Checks if a Pin of the same color is on a projected Position
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
         bool checkSameColPos(List<Figure> figures, int position)
         {
             foreach(Figure figure in figures)

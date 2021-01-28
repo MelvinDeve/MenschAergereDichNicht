@@ -39,10 +39,13 @@ namespace MenschAergereDichNicht
             }
 
         }
-
+        /// <summary>
+        /// Checks the Number of Pins which are still in Home 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <returns></returns>
         int numberInHouse(List<Figure> figures)
         {
-            //TO DO: gibt die anzahl an figuren die im Haus sind zurueck
             int count = 0;
             foreach (Figure figure in figures)
             {
