@@ -174,7 +174,8 @@ namespace MenschAergereDichNicht
                                 return i;
                             break;
                         case 3:
-                            if (PosHome.positions_home_green[i] == posToCheck)
+                            if (PosHome.positions_home_green[i].xPos == posToCheck.xPos 
+                                && PosHome.positions_home_green[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         default:
