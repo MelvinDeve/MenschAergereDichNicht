@@ -21,7 +21,7 @@ namespace MenschAergereDichNicht
             }else if(playField.checkSameColPos(figures, 0) && !playField.checkSameColPos(figures, 0+diceRoll))
             {
                 aktZug.zugstatus = Zugstatus.vorHausWegziehen;
-            }else if (home.numberInHouse(figures)/*+anEndstation*/ == 4)
+            }else if (home.numberInHouse(figures)+playField.anzFigurenInEndpos(figures) == 4)
             {
                 if(aktZug.zugstatus == Zugstatus.hausVoll3)
                 {
@@ -37,7 +37,56 @@ namespace MenschAergereDichNicht
             }
             else
             {
-                aktZug.zugstatus = Zugstatus.ziehen;
+                int immoveableFigures = 0;
+                foreach (Figure figure in figures)
+                {
+                    
+                    if (figure.relPos < 0)
+                    {
+                        if (diceRoll != 6) {
+                            immoveableFigures++;
+                        }
+                    }
+                    else if ((figure.relPos + diceRoll) > 43)
+                    {
+                        immoveableFigures++;
+                    }
+                    else if ((figure.relPos + diceRoll) > 39 && (figure.relPos + diceRoll) < 44)
+                    {
+                        int tempPos;
+                        bool zulaessigInGarage = true;
+                        if (figure.relPos + 1 < 40)
+                        {
+                            tempPos = 40;
+                        }
+                        else
+                        {
+                            tempPos = figure.relPos + 1;
+                        }
+
+                        while (tempPos <= figure.relPos + diceRoll)
+                        {
+                            if (playField.checkSameColPos(figures, tempPos))
+                            {
+                                zulaessigInGarage = false;
+                            }
+                            tempPos++;
+                        }
+                        if (!zulaessigInGarage)
+                        {
+                            immoveableFigures++;
+                        }
+
+                    }
+                }
+                if (immoveableFigures > 3)
+                {
+                    aktZug.zugstatus = Zugstatus.naechsterSpieler;
+                }
+                else
+                {
+                    aktZug.zugstatus = Zugstatus.ziehen;
+                }
             }
             /*
              * if(geworfen==6 && Min 1 im Haus && keiner vor haus){

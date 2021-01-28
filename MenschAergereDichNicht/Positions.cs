@@ -136,6 +136,27 @@ namespace MenschAergereDichNicht
             return -1;
         }
 
+        public int anzFigurenInEndpos(Figure[] figures)
+        {
+            int anz = 0;
+            int verglWert = 43;
+            int prevVerglWert = 44;
+            while (verglWert < prevVerglWert&& verglWert>39)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (figures[i].relPos == verglWert)
+                    {
+                        anz++;
+                        verglWert--;
+                        break;
+                    }
+                }
+                prevVerglWert--;
+            }
+            return anz;
+        }
+
         public int anzFigurenZugfaehig(Figure[] figures, int diceRoll)
         {
             bool tempZugfaehig;
