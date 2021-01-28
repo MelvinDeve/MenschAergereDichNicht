@@ -126,7 +126,12 @@ namespace MenschAergereDichNicht
             }
             return returnPos;
         }
-
+        /// <summary>
+        /// uses figure array and location(in this case margin) to determine which figure 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <param name="marginToCheck"></param>
+        /// <returns></returns>
         public int whichFigure(Figure[] figures, Thickness marginToCheck)
         {
             Pos posToCheck = new Pos(marginToCheck.Left, marginToCheck.Top);
