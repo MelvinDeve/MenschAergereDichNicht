@@ -19,8 +19,8 @@ namespace MenschAergereDichNicht
         public const int yPos_6 = 214;
         public const int yPos_7 = 248;
         public const int yPos_8 = 284;
-        public const int yPos_9 = 320;
-        public const int yPos_10 = 360;
+        public const int yPos_9 = 318;
+        public const int yPos_10 = 354;
 
         public const int xPos_0 = 13+9;
         public const int xPos_1 = 48 + 9;
@@ -77,68 +77,113 @@ namespace MenschAergereDichNicht
             return PosHome.defaultPosition;
         }
 
+        public Figure maybeSendHome(Figure[] blueFigures, Figure[] redFigures, Figure[] yellowFigures, Figure[] greenFigures, Figure fig)
+        {
+            if(blueFigures[0].color != fig.color)
+            {
+                foreach(Figure blueFig in blueFigures)
+                {
+                    if (blueFig.relPos >= 0)
+                    {
+                        if (relInAbsPos(blueFig) == relInAbsPos(fig))
+                        {
+                            return blueFig;
+                        }
+                    }
+                }
+            }
+            if (redFigures[0].color != fig.color)
+            {
+                foreach (Figure redFig in redFigures)
+                {
+                    if (redFig.relPos >= 0)
+                    {
+                        if (relInAbsPos(redFig) == relInAbsPos(fig))
+                        {
+                            return redFig;
+                        }
+                    }
+                }
+            }
+            if (yellowFigures[0].color != fig.color)
+            {
+                foreach (Figure yellowFig in yellowFigures)
+                {
+                    if (yellowFig.relPos >= 0)
+                    {
+                        if (relInAbsPos(yellowFig) == relInAbsPos(fig))
+                        {
+                            return yellowFig;
+                        }
+                    }
+                }
+            }
+            if (greenFigures[0].color != fig.color)
+            {
+                foreach (Figure greenFig in greenFigures)
+                {
+                    if (greenFig.relPos >= 0)
+                    {
+                        if (relInAbsPos(greenFig) == relInAbsPos(fig))
+                        {
+                            return greenFig;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int relInAbsPos(Figure fig)
+        {
+            int absPos;
+            if ((fig.relPos + fig.diff) > 39)
+            {
+                absPos = fig.relPos + fig.diff - 40;
+            }
+            else
+            {
+                absPos = fig.relPos + fig.diff;
+            }
+            return absPos;
+        }
+
         public Pos SendHome(Figure[] figures, Figure fig)
         {
+            int tempRelPos = -1;
+            bool fertig = false;
 
-            int freespace = 0;
+            while (!fertig)
+            {
+                fertig = true;
+                foreach (Figure figure in figures)
+                {
+                    if (figure.relPos == tempRelPos)
+                    {
+                        tempRelPos -= 1;
+                        fertig = false;
+                    }
+                }
+            }
+
+            fig.relPos = tempRelPos;
+            tempRelPos = (tempRelPos + 1) * -1;
             
                 switch (fig.color)
                 {
                     case 0:
-                        for (int j = 0; j < 4; j++)
-                        {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_blue[i].xPos &&
-                                    GetCoord(figures[j]).yPos == PosHome.positions_home_blue[i].yPos)
-                                {
-                                    freespace++;
-                                }
-                            }      
-                        }
-                        return PosHome.positions_home_blue[freespace];
+                        
+                    return PosHome.positions_home_blue[tempRelPos];
                     case 1:
-                        for (int j = 0; j < 4; j++)
-                        {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_red[i].xPos &&
-                                    GetCoord(figures[j]).yPos == PosHome.positions_home_red[i].yPos)
-                                {
-                                    freespace++;
-                                }
-                            }
-                        }
-                        return PosHome.positions_home_red[freespace];
+                    return PosHome.positions_home_red[tempRelPos];
                     case 2:
-                        for (int j = 0; j < 4; j++)
-                        {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_yellow[i].xPos &&
-                                    GetCoord(figures[j]).yPos == PosHome.positions_home_yellow[i].yPos)
-                                {
-                                    freespace++;
-                                }
-                            }
-                        }
-                        return PosHome.positions_home_yellow[freespace];
+                    return PosHome.positions_home_yellow[tempRelPos];
                     case 3:
-                        for (int j = 0; j < 4; j++)
-                        {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                if (GetCoord(figures[j]).xPos == PosHome.positions_home_green[i].xPos &&
-                                    GetCoord(figures[j]).yPos == PosHome.positions_home_green[i].yPos)
-                                {
-                                    freespace++;
-                                }
-                            }
-                        }
-                        return PosHome.positions_home_green[freespace];
+                    return PosHome.positions_home_green[tempRelPos];
                     default:
-                        return PosHome.defaultPosition;
+                    return PosHome.defaultPosition;
                 }
+            
         }
 
 

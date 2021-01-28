@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace MenschAergereDichNicht
 {
@@ -13,9 +14,29 @@ namespace MenschAergereDichNicht
         public const int col_red = 1;
         public const int col_yellow = 2;
         public const int col_green = 3;
+        public static Brush getColorBrush(int color)
+        {
+            switch (color)
+            {
+                case ColConst.col_blue:
+                    return Brushes.Blue;
+                case ColConst.col_red:
+                    return Brushes.DarkRed;
+                case ColConst.col_yellow:
+                    return Brushes.Gold;
+                case ColConst.col_green:
+                    return Brushes.Green;
+                default:
+                    return Brushes.Black;
+            }
+        }
     }
+
+    
     class PositionHome
     {
+        
+
         public Pos[] positions_home_blue = new Pos[4];
         public Pos[] positions_home_red = new Pos[4];
         public Pos[] positions_home_yellow = new Pos[4];

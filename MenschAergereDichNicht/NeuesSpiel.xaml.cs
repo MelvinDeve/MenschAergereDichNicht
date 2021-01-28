@@ -26,8 +26,32 @@ namespace MenschAergereDichNicht
 
         private void BtnSpielStarten_Click(object sender, RoutedEventArgs e)
         {
-            NeuesSpiel neuesSpiel = new NeuesSpiel();
-            neuesSpiel.ShowDialog();
+            List<Player> Spieler = new List<Player>();
+
+            if(TxtBxName1.Text!="Name" && TxtBxName1.Text != "")
+            {
+                Spieler.Add(new Player(TxtBxName1.Text, ColConst.col_blue));
+            }
+            if (TxtBxName2.Text != "Name" && TxtBxName2.Text != "")
+            {
+                Spieler.Add(new Player(TxtBxName2.Text, ColConst.col_red));
+            }
+            if (TxtBxName3.Text != "Name" && TxtBxName3.Text != "")
+            {
+                Spieler.Add(new Player(TxtBxName3.Text, ColConst.col_yellow));
+            }
+            if (TxtBxName4.Text != "Name" && TxtBxName4.Text != "")
+            {
+                Spieler.Add(new Player(TxtBxName4.Text, ColConst.col_green));
+            }
+
+            if (Spieler.Count > 0)
+            {
+                Spielfeld spielfeld = new Spielfeld(Spieler);
+                this.Close();
+                spielfeld.ShowDialog();
+            }
+            
         }
     }
 }

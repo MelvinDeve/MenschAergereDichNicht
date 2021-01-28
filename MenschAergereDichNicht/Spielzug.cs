@@ -8,6 +8,7 @@ namespace MenschAergereDichNicht
 {
     static class Zugstatus
     {
+        public const int spielVorbei = -1;
         public const int ersterWurf = 0;
         public const int hausVoll2 = 1;
         public const int hausVoll3 = 2;

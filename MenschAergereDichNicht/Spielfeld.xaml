@@ -21,6 +21,9 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="409*"/>
             <ColumnDefinition Width="383*"/>
@@ -78,14 +81,12 @@
             <Image Source="Assets/pieceRed_border02.png" Height="44" HorizontalAlignment="Left" Width="26" VerticalAlignment="Top" />
         </Button>
 
-        <Button Grid.Column="0" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="65" Height="67" Margin="198, 236, -237, -259" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="67" HorizontalAlignment="Left" Width="65" VerticalAlignment="Top" >
-
-            </Image>
+        <Button Grid.Column="1" x:Name="Dice" Style="{StaticResource ImageButtonStyle}" Click="Dice_Click" Width="120" Height="120" Margin="145,242,116,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Image x:Name="ImgDice1" Source="Assets/dieWhite_border1.png" Height="120" HorizontalAlignment="Left" Width="120" VerticalAlignment="Top" />
         </Button>
 
-        <Label x:Name="LblAusgabe" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="109,93,0,0" VerticalAlignment="Top" Width="194"/>
-        <Label x:Name="aktSpielerLabel" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="109,44,0,0" VerticalAlignment="Top" Width="194"/>
+        <Label x:Name="LblAusgabe" Content="" Grid.Column="1" HorizontalAlignment="Left" Height="112" Margin="37,93,0,0" VerticalAlignment="Top" Width="336" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Label x:Name="aktSpielerLabel" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="37,16,0,0" VerticalAlignment="Top" Width="336" FontWeight="Bold" FontSize="35" HorizontalContentAlignment="Center"/>
 
 
 

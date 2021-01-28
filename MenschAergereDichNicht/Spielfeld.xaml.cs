@@ -26,14 +26,19 @@ namespace MenschAergereDichNicht
         Figure[] redFigures;
         Figure[] blueFigures;
         Figure[] yellowFigures;
+
+        Button[] greenButtons;
+        Button[] redButtons;
+        Button[] blueButtons;
+        Button[] yellowButtons;
+
         Zugkontrolle zugkontrolle = new Zugkontrolle();
         int prevnum = -1;
 
         int rolledDice = -1;
-        public Spielfeld()
+        internal Spielfeld(List<Player> player)
         {
-            Spieler.Add(new Player("Hans", ColConst.col_green));
-            //Spieler.Add(new Player("Frank", ColConst.col_blue));
+            Spieler = player;
             aktZug.spieler = 0;
             greenFigures = new Figure[4] { new Figure(-1, ColConst.col_green), new Figure(-2, ColConst.col_green), new Figure(-3, ColConst.col_green), new Figure(-4, ColConst.col_green) };
             redFigures = new Figure[4] { new Figure(-1, ColConst.col_red), new Figure(-2, ColConst.col_red), new Figure(-3, ColConst.col_red), new Figure(-4, ColConst.col_red) };
@@ -41,8 +46,14 @@ namespace MenschAergereDichNicht
             yellowFigures = new Figure[4] { new Figure(-1, ColConst.col_yellow), new Figure(-2, ColConst.col_yellow), new Figure(-3, ColConst.col_yellow), new Figure(-4, ColConst.col_yellow) };
           
             InitializeComponent();
-            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
+            greenButtons = new Button[4] { btnFigGruen0, btnFigGruen1, btnFigGruen2, btnFigGruen3 };
+            redButtons = new Button[4] { btnFigRot0, btnFigRot1, btnFigRot2, btnFigRot3 };
+            blueButtons = new Button[4] { btnFigBlau0, btnFigBlau1, btnFigBlau2, btnFigBlau3 };
+            yellowButtons = new Button[4] { btnFigGelb0, btnFigGelb1, btnFigGelb2, btnFigGelb3 };
+            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
+            aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
         }
+
 
         private void nextPlayer()
         {
@@ -54,6 +65,7 @@ namespace MenschAergereDichNicht
                 aktZug.spieler++;
             }
             aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
+            aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
         }
 
         /// <summary>
@@ -64,7 +76,7 @@ namespace MenschAergereDichNicht
         /// <param name="e"></param>
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-            if (aktZug.zugstatus <= Zugstatus.hausVoll3)
+            if (aktZug.zugstatus <= Zugstatus.hausVoll3 && aktZug.zugstatus>Zugstatus.spielVorbei)
             {
                 Random dice = new Random();
                 int number;
@@ -102,7 +114,8 @@ namespace MenschAergereDichNicht
                     aktZug.zugstatus = Zugstatus.ersterWurf;
                     nextPlayer();
                 }
-                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
+                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
+                aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
 
                 if (number != prevnum)
                     LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
@@ -298,13 +311,77 @@ namespace MenschAergereDichNicht
                     aktZug.zugstatus = Zugstatus.ersterWurf;
                 }
             }
-            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
+            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
+            aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
         }
 
         public void drawFigure(Button figure, int selectedFigure)
         {
             Pos targetPos = fieldPositions.GetCoord(getAktFigures()[selectedFigure]);
             figure.Margin = new Thickness(targetPos.xPos, targetPos.yPos, 0, 0);
+            Figure toBeKicked = fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]);
+            Pos sendHomePos;
+            if (toBeKicked!=null)
+            {
+                
+                switch (toBeKicked.color)
+                {
+                    case ColConst.col_blue:
+                        sendHomePos = fieldPositions.SendHome(blueFigures, fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]));
+                        foreach (Button btn in blueButtons)
+                        {
+                            if(btn.Margin.Left==targetPos.xPos && btn.Margin.Top == targetPos.yPos)
+                            {
+                                btn.Margin = new Thickness(sendHomePos.xPos, sendHomePos.yPos, 0, 0);
+                            }
+                        }                        
+                        break;
+                    case ColConst.col_red:
+                        sendHomePos = fieldPositions.SendHome(redFigures, fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]));
+                        foreach (Button btn in redButtons)
+                        {
+                            if (btn.Margin.Left == targetPos.xPos && btn.Margin.Top == targetPos.yPos)
+                            {
+                                btn.Margin = new Thickness(sendHomePos.xPos, sendHomePos.yPos, 0, 0);
+                            }
+                        }
+                        break;
+                    case ColConst.col_yellow:
+                        sendHomePos = fieldPositions.SendHome(yellowFigures, fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]));
+                        foreach (Button btn in yellowButtons)
+                        {
+                            if (btn.Margin.Left == targetPos.xPos && btn.Margin.Top == targetPos.yPos)
+                            {
+                                btn.Margin = new Thickness(sendHomePos.xPos, sendHomePos.yPos, 0, 0);
+                            }
+                        }
+                        break;
+                    case ColConst.col_green:
+                        sendHomePos = fieldPositions.SendHome(greenFigures, fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]));
+                        foreach (Button btn in greenButtons)
+                        {
+                            if (btn.Margin.Left == targetPos.xPos && btn.Margin.Top == targetPos.yPos)
+                            {
+                                btn.Margin = new Thickness(sendHomePos.xPos, sendHomePos.yPos, 0, 0);
+                            }
+                        }
+                        break;
+                }
+                fieldPositions.maybeSendHome(blueFigures, redFigures, yellowFigures, greenFigures, getAktFigures()[selectedFigure]);
+            }
+
+            int winSum = 0;
+            foreach(Figure figure1 in getAktFigures())
+            {
+                winSum += figure1.relPos;
+            }
+
+            if (winSum == 166)
+            {
+                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + " hat Gewonnen!!!!!!!!";
+                aktSpielerLabel.Foreground = ColConst.getColorBrush(Spieler[aktZug.spieler].Farbe);
+                aktZug.zugstatus = Zugstatus.spielVorbei;
+            }
         }
 
     }

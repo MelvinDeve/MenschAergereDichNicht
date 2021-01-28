@@ -11,62 +11,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Hintergrund.jpg"/>
         </Grid.Background>
-        <ComboBox x:Name="CmBxFarbe1" HorizontalAlignment="Left" Height="40" Margin="480,70,0,0" VerticalAlignment="Top" Width="80">
-            <ComboBoxItem Name="FarbeRot1" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_rot.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGrün1" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_grün.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeBlau1" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_blau.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGelb1" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_gelb.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-        </ComboBox>
-        <ComboBox x:Name="CmBxFarbe2" HorizontalAlignment="Left" Height="35" Margin="480,140,0,0" VerticalAlignment="Top" Width="80">
-            <ComboBoxItem Name="FarbeRot2" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_rot.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGrün2" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_grün.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeBlau2" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_blau.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGelb2" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_gelb.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-        </ComboBox>
-        <ComboBox x:Name="CmBxFarbe3" HorizontalAlignment="Left" Height="35" Margin="480,210,0,0" VerticalAlignment="Top" Width="80">
-            <ComboBoxItem Name="FarbeRot3" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_rot.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGrün3" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_grün.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeBlau3" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_blau.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGelb3" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_gelb.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-        </ComboBox>
-        <ComboBox x:Name="CmBxFarbe4" HorizontalAlignment="Left" Height="35" Margin="480,280,0,0" VerticalAlignment="Top" Width="80">
-            <ComboBoxItem Name="FarbeRot4" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_rot.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGrün4" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_grün.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeBlau4" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_blau.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-            <ComboBoxItem Name="FarbeGelb4" Height="35" Margin="0,0,-1,0" >
-                <Image Source="Assets/Farbe_gelb.png" Height="35" Width="55"></Image>
-            </ComboBoxItem>
-        </ComboBox>
+
+        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="40" Margin="490,60,0,0" Source="Assets/pieceBlue_border03.png"/>
+        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="40" Margin="490,130,0,0" Source="Assets/pieceRed_border02.png"/>
+        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="40" Margin="490,200,0,0" Source="Assets/pieceYellow_border01.png"/>
+        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="40" Margin="490,270,0,0" Source="Assets/pieceGreen_border02.png"/>
+        
         <TextBox x:Name="TxtBxName1" HorizontalAlignment="Left" Height="40" Margin="230,70,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
         <TextBox x:Name="TxtBxName2" HorizontalAlignment="Left" Height="40" Margin="230,140,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
         <TextBox x:Name="TxtBxName3" HorizontalAlignment="Left" Height="40" Margin="230,210,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="150" Background="#FFAB7D3D" BorderBrush="#FFFDFDFF" Foreground="#FFFFFDFD" SelectionBrush="#FF0078D7" FontSize="18"/>
@@ -75,7 +25,7 @@
         <Label x:Name="LblSpieler2" Content="Name Spieler 2:" HorizontalAlignment="Left" Height="40" Margin="50,140,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
         <Label x:Name="LblSpieler3" Content="Name Spieler 3:" HorizontalAlignment="Left" Height="40" Margin="50,210,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
         <Label x:Name="LblSpieler4" Content="Name Spieler 4:" HorizontalAlignment="Left" Height="40" Margin="50,280,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
-		<Button x:Name="BtnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="310" Margin="616,70,0,0" VerticalAlignment="Top" Width="143" Background="#FF3C8214" Foreground="White" FontSize="18" BorderBrush="#FFFEFFFE"/>
+		<Button x:Name="BtnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="250" Margin="616,70,0,0" VerticalAlignment="Top" Width="143" Background="#FF3C8214" Foreground="White" FontSize="18" BorderBrush="#FFFEFFFE" Click="BtnSpielStarten_Click"/>
         <Label x:Name="LblFarbe1" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,70,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
         <Label x:Name="LblFarbe2" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,140,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
         <Label x:Name="LblFarbe3" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,210,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
