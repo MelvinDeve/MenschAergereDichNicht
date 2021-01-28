@@ -27,6 +27,7 @@ namespace MenschAergereDichNicht
         Figure[] blueFigures;
         Figure[] yellowFigures;
         Zugkontrolle zugkontrolle = new Zugkontrolle();
+        int prevnum = -1;
 
         int rolledDice = -1;
         public Spielfeld()
@@ -55,12 +56,19 @@ namespace MenschAergereDichNicht
             aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
         }
 
+        /// <summary>
+        ///  If you click on the dice, it will roll a number for you. This number is shown to you on the dice, and in a label above there is a text with it aswell.
+        ///  If you roll the same number twice, it say it to you
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
             if (aktZug.zugstatus <= Zugstatus.hausVoll3)
             {
                 Random dice = new Random();
                 int number;
+
 
                 number = dice.Next(1, 7);
 
@@ -89,14 +97,23 @@ namespace MenschAergereDichNicht
                 rolledDice = number;
 
                 zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
-                if(aktZug.zugstatus == Zugstatus.naechsterSpieler)
+                if (aktZug.zugstatus == Zugstatus.naechsterSpieler)
                 {
                     aktZug.zugstatus = Zugstatus.ersterWurf;
                     nextPlayer();
                 }
                 aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
 
+                if (number != prevnum)
+                    LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
+                else
+                    LblAusgabe.Content = "Schon wieder eine " + number + "!";
+
+
+                prevnum = number;
+
             }
+
         }
 
         private Figure[] getAktFigures()

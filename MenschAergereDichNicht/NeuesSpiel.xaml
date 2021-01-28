@@ -75,9 +75,7 @@
         <Label x:Name="LblSpieler2" Content="Name Spieler 2:" HorizontalAlignment="Left" Height="40" Margin="50,140,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
         <Label x:Name="LblSpieler3" Content="Name Spieler 3:" HorizontalAlignment="Left" Height="40" Margin="50,210,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
         <Label x:Name="LblSpieler4" Content="Name Spieler 4:" HorizontalAlignment="Left" Height="40" Margin="50,280,0,0" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White" VerticalAlignment="Top"/>
-        <Label x:Name="LblRegelsatz" Content="Regelsatz:" HorizontalAlignment="Left" Height="40" Margin="50,350,0,0" VerticalAlignment="Top" Width="145" FontSize="18" BorderBrush="#FFAB7D3D" Foreground="White"/>
-        <ComboBox x:Name="CmBxRegelsatz" HorizontalAlignment="Left" Height="30" Margin="230,350,0,0" VerticalAlignment="Top" Width="120" Background="#FFAB7D3D" Foreground="#FFAB7D3D" BorderBrush="#FFFFFDFD"/>
-        <Button x:Name="BtnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="310" Margin="616,70,0,0" VerticalAlignment="Top" Width="143" Background="#FF3C8214" Foreground="White" FontSize="18" BorderBrush="#FFFEFFFE"/>
+		<Button x:Name="BtnSpielStarten" Content="Spiel starten" HorizontalAlignment="Left" Height="310" Margin="616,70,0,0" VerticalAlignment="Top" Width="143" Background="#FF3C8214" Foreground="White" FontSize="18" BorderBrush="#FFFEFFFE"/>
         <Label x:Name="LblFarbe1" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,70,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
         <Label x:Name="LblFarbe2" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,140,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
         <Label x:Name="LblFarbe3" Content="Farbe" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,210,0,0" Foreground="White" FontSize="18" Width="60" Height="40"/>
