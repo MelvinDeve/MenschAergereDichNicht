@@ -15,6 +15,8 @@ namespace MenschAergereDichNicht
         Pos[] positions_garage_green = new Pos[4];
         Pos defaultPosition = new Pos(0, 0);
 
+        
+
         Pos GetHomeCoord(int pos, int col)
         {
             switch (col)
@@ -39,13 +41,15 @@ namespace MenschAergereDichNicht
         /// <returns></returns>
         public int numberImmoveable(Figure[] figures)
         {
-            //TO DO: gibt die anzahl an figuren die in der Garage an ihrer finalen Position sind zurueck
-            int count = 0;
-            foreach (Figure figure in figures)
+        int finalPos = 43;
+        int count = 0;
+            for(int i = 0; i < 4; i++)
             {
-                if (figure.relPos > 39)
+                if (figures[i].relPos == (finalPos + figures[i].diff))
                 {
                     count++;
+                    finalPos--;
+                    i = 0;
                 }
             }
             return count;
