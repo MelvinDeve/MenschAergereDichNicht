@@ -20,7 +20,7 @@ namespace MenschAergereDichNicht
                 aktZug.zugstatus = Zugstatus.rausgehen;
             }else if(playField.checkSameColPos(figures, 0) && !playField.checkSameColPos(figures, 0+diceRoll))
             {
-                aktZug.zugstatus = Zugstatus.rausgehen;
+                aktZug.zugstatus = Zugstatus.vorHausWegziehen;
             }else if (home.numberInHouse(figures)/*+anEndstation*/ == 4)
             {
                 if(aktZug.zugstatus == Zugstatus.hausVoll3)

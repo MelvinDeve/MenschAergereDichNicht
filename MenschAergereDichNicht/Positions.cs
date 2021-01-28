@@ -46,11 +46,11 @@ namespace MenschAergereDichNicht
         {
             int absolutePos;
 
-            if (fig.relPos <= 39 && fig.relPos > 0)
+            if (fig.relPos <= 39 && fig.relPos >= 0)
             {
-                if ((fig.relPos + fig.diff) >= 39)
+                if ((fig.relPos + fig.diff) > 39)
                 {
-                    absolutePos = fig.relPos + fig.diff - 39;
+                    absolutePos = fig.relPos + fig.diff - 40;
                 }
                 else
                 {
@@ -63,13 +63,13 @@ namespace MenschAergereDichNicht
                 switch (fig.color)
                 {
                     case 0:
-                        return PosHome.positions_home_blue[fig.relPos - 39];
+                        return PosGar.positions_garage_blue[fig.relPos - 40];
                     case 1:
-                        return PosHome.positions_home_red[fig.relPos - 39];
+                        return PosGar.positions_garage_red[fig.relPos - 40];
                     case 2:
-                        return PosHome.positions_home_yellow[fig.relPos - 39];
+                        return PosGar.positions_garage_yellow[fig.relPos - 40];
                     case 3:
-                        return PosHome.positions_home_green[fig.relPos - 39];
+                        return PosGar.positions_garage_green[fig.relPos - 40];
                     default:
                         break;
                 }
@@ -200,24 +200,33 @@ namespace MenschAergereDichNicht
                     switch (figures[i].color)
                     {
                         case 0:
-                            if (PosGar.positions_garage_blue[i].xPos == posToCheck.xPos &&
-                                PosGar.positions_garage_blue[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_blue[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_blue[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 1:
-                            if (PosGar.positions_garage_red[i].xPos == posToCheck.xPos &&
-                                PosGar.positions_garage_red[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_red[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_red[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 2:
-                            if (PosGar.positions_garage_yellow[i].xPos == posToCheck.xPos &&
-                                PosGar.positions_garage_yellow[i].yPos == posToCheck.yPos)
-                                return i;
+                            for (int j = 0; j < 4; j++)
+                            {
+                                if (PosGar.positions_garage_yellow[figures[i].relPos - 40].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_yellow[figures[i].relPos - 40].yPos == posToCheck.yPos)
+                                    return i;
+                            }
                             break;
                         case 3:
-                            if (PosGar.positions_garage_green[i].xPos == posToCheck.xPos &&
-                                PosGar.positions_garage_green[i].yPos == posToCheck.yPos)
-                                return i;
+                                if (PosGar.positions_garage_green[figures[i].relPos-40].xPos == posToCheck.xPos &&
+                                    PosGar.positions_garage_green[figures[i].relPos-40].yPos == posToCheck.yPos)
+                                    return i;
                             break;
                         default:
                             break;
@@ -253,9 +262,9 @@ namespace MenschAergereDichNicht
                 }
                 else
                 {
-                    if ((figures[i].relPos + figures[i].diff) >= 39)
+                    if ((figures[i].relPos + figures[i].diff) > 39)
                     {
-                        absolutePos[i] = figures[i].relPos + figures[i].diff - 39;
+                        absolutePos[i] = figures[i].relPos + figures[i].diff - 40;
                     }
                     else
                     {

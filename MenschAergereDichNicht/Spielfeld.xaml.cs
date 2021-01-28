@@ -32,7 +32,7 @@ namespace MenschAergereDichNicht
         public Spielfeld()
         {
             Spieler.Add(new Player("Hans", ColConst.col_green));
-            Spieler.Add(new Player("Frank", ColConst.col_blue));
+            //Spieler.Add(new Player("Frank", ColConst.col_blue));
             aktZug.spieler = 0;
             greenFigures = new Figure[4] { new Figure(-1, ColConst.col_green), new Figure(-2, ColConst.col_green), new Figure(-3, ColConst.col_green), new Figure(-4, ColConst.col_green) };
             redFigures = new Figure[4] { new Figure(-1, ColConst.col_red), new Figure(-2, ColConst.col_red), new Figure(-3, ColConst.col_red), new Figure(-4, ColConst.col_red) };
@@ -194,8 +194,9 @@ namespace MenschAergereDichNicht
                     if (getAktFigures()[selectedFigure].relPos < 0)
                     {
                         getAktFigures()[selectedFigure].relPos = 0;
+                        drawFigure(figure, selectedFigure);
                         aktZug.zugstatus = Zugstatus.ersterWurf;
-                        nextPlayer();
+                        
                     }
                     else
                     {
@@ -207,6 +208,15 @@ namespace MenschAergereDichNicht
                     if (getAktFigures()[selectedFigure].relPos == 0)
                     {
                         getAktFigures()[selectedFigure].relPos += rolledDice;
+                        drawFigure(figure, selectedFigure);
+                        if (rolledDice != 6)
+                        {
+                            aktZug.zugstatus = Zugstatus.naechsterSpieler;
+                        }
+                        else
+                        {
+                            aktZug.zugstatus = Zugstatus.ersterWurf;
+                        }
                     }
                     else
                     {
@@ -219,6 +229,7 @@ namespace MenschAergereDichNicht
                         && !fieldPositions.checkSameColPos(getAktFigures(), getAktFigures()[selectedFigure].relPos + rolledDice))
                     {
                         getAktFigures()[selectedFigure].relPos += rolledDice;
+                        drawFigure(figure, selectedFigure);
                         if (rolledDice == 6)
                         {
                             aktZug.zugstatus = Zugstatus.ersterWurf;
@@ -228,19 +239,31 @@ namespace MenschAergereDichNicht
                             aktZug.zugstatus = Zugstatus.naechsterSpieler;
                         }
                     }
-                    else if (getAktFigures()[selectedFigure].relPos > 40 && getAktFigures()[selectedFigure].relPos < 43)
+                    else if ((getAktFigures()[selectedFigure].relPos+rolledDice) > 39 && (getAktFigures()[selectedFigure].relPos + rolledDice) < 44)
                     {
+                        int tempPos;
                         bool zulaessigInGarage = true;
-                        for (int tempPos = 40; tempPos <= getAktFigures()[selectedFigure].relPos + rolledDice; tempPos++)
+                        if (getAktFigures()[selectedFigure].relPos + 1<40)
+                        {
+                            tempPos = 40;
+                        }
+                        else
+                        {
+                            tempPos = getAktFigures()[selectedFigure].relPos+1;
+                        }
+
+                        while (tempPos <= getAktFigures()[selectedFigure].relPos + rolledDice)
                         {
                             if (fieldPositions.checkSameColPos(getAktFigures(), tempPos))
                             {
                                 zulaessigInGarage = false;
                             }
+                            tempPos++;
                         }
                         if (zulaessigInGarage)
                         {
                             getAktFigures()[selectedFigure].relPos += rolledDice;
+                            drawFigure(figure, selectedFigure);
                             if (rolledDice == 6)
                             {
                                 aktZug.zugstatus = Zugstatus.ersterWurf;
@@ -252,8 +275,20 @@ namespace MenschAergereDichNicht
                         }
                     }
                 }
+                if (aktZug.zugstatus == Zugstatus.naechsterSpieler)
+                {
+                    nextPlayer();
+                    aktZug.zugstatus = Zugstatus.ersterWurf;
+                }
             }
             aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
         }
+
+        public void drawFigure(Button figure, int selectedFigure)
+        {
+            Pos targetPos = fieldPositions.GetCoord(getAktFigures()[selectedFigure]);
+            figure.Margin = new Thickness(targetPos.xPos, targetPos.yPos, 0, 0);
+        }
+
     }
 }
