@@ -44,7 +44,7 @@ namespace MenschAergereDichNicht
         /// </summary>
         /// <param name="figures"></param>
         /// <returns></returns>
-        int numberInHouse(List<Figure> figures)
+        public int numberInHouse(Figure[] figures)
         {
             int count = 0;
             foreach (Figure figure in figures)

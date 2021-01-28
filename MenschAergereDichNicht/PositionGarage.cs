@@ -32,11 +32,23 @@ namespace MenschAergereDichNicht
             }
 
         }
-
-        int numberImmoveable(List<Button> figures, int color)
+        /// <summary>
+        /// returns the number of immoveable figures 
+        /// </summary>
+        /// <param name="figures"></param>
+        /// <returns></returns>
+        public int numberImmoveable(Figure[] figures)
         {
             //TO DO: gibt die anzahl an figuren die in der Garage an ihrer finalen Position sind zurueck
-            return 0;
+            int count = 0;
+            foreach (Figure figure in figures)
+            {
+                if (figure.relPos > 39)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
         void fillGaragePositions()

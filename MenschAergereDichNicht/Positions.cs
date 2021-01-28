@@ -48,7 +48,7 @@ namespace MenschAergereDichNicht
         /// <param name="figures"></param>
         /// <param name="position"></param>
         /// <returns></returns>
-        bool checkSameColPos(List<Figure> figures, int position)
+        public bool checkSameColPos(Figure[] figures, int position)
         {
             foreach(Figure figure in figures)
             {
