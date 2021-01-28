@@ -27,6 +27,7 @@ namespace MenschAergereDichNicht
         Figure[] blueFigures;
         Figure[] yellowFigures;
         Zugkontrolle zugkontrolle = new Zugkontrolle();
+        int prevnum = -1;
 
         int rolledDice = -1;
         public Spielfeld()
@@ -55,6 +56,67 @@ namespace MenschAergereDichNicht
             aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
         }
 
+        /// <summary>
+        ///  If you click on the dice, it will roll a number for you. This number is shown to you on the dice, and in a label above there is a text with it aswell.
+        ///  If you roll the same number twice, it say it to you
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Dice_Click(object sender, RoutedEventArgs e)
+        {
+            if (aktZug.zugstatus <= Zugstatus.hausVoll3)
+            {
+                Random dice = new Random();
+                int number;
+
+
+                number = dice.Next(1, 7);
+
+                switch (number)
+                {
+                    case 1:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border1.png", UriKind.Relative));
+                        break;
+                    case 2:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border2.png", UriKind.Relative));
+                        break;
+                    case 3:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border3.png", UriKind.Relative));
+                        break;
+                    case 4:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border4.png", UriKind.Relative));
+                        break;
+                    case 5:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border5.png", UriKind.Relative));
+                        break;
+                    case 6:
+                        ImgDice1.Source = new BitmapImage(new Uri(@"Assets/dieWhite_border6.png", UriKind.Relative));
+                        break;
+                }
+
+                rolledDice = number;
+
+                zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
+                if (aktZug.zugstatus == Zugstatus.naechsterSpieler)
+                {
+                    aktZug.zugstatus = Zugstatus.ersterWurf;
+                    nextPlayer();
+                }
+                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
+
+                if (number != prevnum)
+                    LblAusgabe.Content = "Es wurde eine " + number + " gewürfelt!";
+                else
+                    LblAusgabe.Content = "Schon wieder eine " + number + "!";
+
+
+                prevnum = number;
+
+            }
+
+        }
+
+        /*
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
             if (aktZug.zugstatus <= Zugstatus.hausVoll3)
@@ -98,6 +160,7 @@ namespace MenschAergereDichNicht
 
             }
         }
+        */
 
         private Figure[] getAktFigures()
         {
