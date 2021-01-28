@@ -138,19 +138,23 @@ namespace MenschAergereDichNicht
                     switch (figures[i].color)
                     {
                         case 0:
-                            if (PosGar.positions_garage_blue[i] == posToCheck)
+                            if (PosGar.positions_garage_blue[i].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_blue[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 1:
-                            if (PosGar.positions_garage_red[i] == posToCheck)
+                            if (PosGar.positions_garage_red[i].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_red[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 2:
-                            if (PosGar.positions_garage_yellow[i] == posToCheck)
+                            if (PosGar.positions_garage_yellow[i].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_yellow[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 3:
-                            if (PosGar.positions_garage_green[i] == posToCheck)
+                            if (PosGar.positions_garage_green[i].xPos == posToCheck.xPos &&
+                                PosGar.positions_garage_green[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         default:
@@ -162,19 +166,23 @@ namespace MenschAergereDichNicht
                     switch (figures[i].color)
                     {
                         case 0:
-                            if (PosHome.positions_home_blue[i] == posToCheck)
+                            if (PosHome.positions_home_blue[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_blue[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 1:
-                            if (PosHome.positions_home_red[i] == posToCheck)
+                            if (PosHome.positions_home_red[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_red[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 2:
-                            if (PosHome.positions_home_yellow[i] == posToCheck)
+                            if (PosHome.positions_home_yellow[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_yellow[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         case 3:
-                            if (PosHome.positions_home_green[i] == posToCheck)
+                            if (PosHome.positions_home_green[i].xPos == posToCheck.xPos &&
+                                PosHome.positions_home_green[i].yPos == posToCheck.yPos)
                                 return i;
                             break;
                         default:
@@ -191,7 +199,8 @@ namespace MenschAergereDichNicht
                     {
                         absolutePos[i] = figures[i].relPos + figures[i].diff;
                     }
-                    if (positions[absolutePos[i]] == posToCheck)
+                    if (positions[absolutePos[i]].xPos == posToCheck.xPos &&
+                        positions[absolutePos[i]].yPos == posToCheck.yPos)
                     {
                         return i;
                     }
