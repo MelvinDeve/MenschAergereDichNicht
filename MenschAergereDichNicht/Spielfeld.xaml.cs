@@ -168,6 +168,7 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure,  int color)
         {
+            int selectedFigure;
             if(aktZug.zugstatus == Zugstatus.rausgehen)
             {
                 /*
