@@ -17,7 +17,7 @@ namespace MenschAergereDichNicht
 
         
 
-        Pos GetHomeCoord(int pos, int col)
+        Pos GetGarageCoord(int pos, int col)
         {
             switch (col)
             {
