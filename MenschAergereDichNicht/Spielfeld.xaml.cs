@@ -33,18 +33,31 @@ namespace MenschAergereDichNicht
         {
             Spieler.Add(new Player("Hans", ColConst.col_green));
             Spieler.Add(new Player("Frank", ColConst.col_blue));
-            aktZug.spieler = Spieler[0];
+            aktZug.spieler = 0;
             greenFigures = new Figure[4] { new Figure(-1, ColConst.col_green), new Figure(-2, ColConst.col_green), new Figure(-3, ColConst.col_green), new Figure(-4, ColConst.col_green) };
             redFigures = new Figure[4] { new Figure(-1, ColConst.col_red), new Figure(-2, ColConst.col_red), new Figure(-3, ColConst.col_red), new Figure(-4, ColConst.col_red) };
             blueFigures = new Figure[4] { new Figure(-1, ColConst.col_blue), new Figure(-2, ColConst.col_blue), new Figure(-3, ColConst.col_blue), new Figure(-4, ColConst.col_blue) };
             yellowFigures = new Figure[4] { new Figure(-1, ColConst.col_yellow), new Figure(-2, ColConst.col_yellow), new Figure(-3, ColConst.col_yellow), new Figure(-4, ColConst.col_yellow) };
           
             InitializeComponent();
+            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
+        }
+
+        private void nextPlayer()
+        {
+            if(aktZug.spieler >= Spieler.Count - 1) {
+                aktZug.spieler = 0;
+            }
+            else
+            {
+                aktZug.spieler++;
+            }
+            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name;
         }
 
         private void Dice_Click(object sender, RoutedEventArgs e)
         {
-            if (aktZug.zugstatus < Zugstatus.hausVoll3)
+            if (aktZug.zugstatus <= Zugstatus.hausVoll3)
             {
                 Random dice = new Random();
                 int number;
@@ -76,13 +89,19 @@ namespace MenschAergereDichNicht
                 rolledDice = number;
 
                 zugkontrolle.checkWurf(aktZug, rolledDice, getAktFigures());
+                if(aktZug.zugstatus == Zugstatus.naechsterSpieler)
+                {
+                    aktZug.zugstatus = Zugstatus.ersterWurf;
+                    nextPlayer();
+                }
+                aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
 
             }
         }
 
         private Figure[] getAktFigures()
         {
-            switch (aktZug.spieler.Farbe)
+            switch (Spieler[aktZug.spieler].Farbe)
             {
                 case ColConst.col_blue:
                     return blueFigures;
@@ -168,7 +187,7 @@ namespace MenschAergereDichNicht
 
         private void moveFigure(Button figure,  int color)
         {
-            if (aktZug.zugstatus > Zugstatus.hausVoll3) { 
+            if (aktZug.zugstatus > Zugstatus.hausVoll3 && color == Spieler[aktZug.spieler].Farbe) { 
             int selectedFigure = fieldPositions.whichFigure(getAktFigures(), figure.Margin);
                 if (aktZug.zugstatus == Zugstatus.rausgehen)
                 {
@@ -176,6 +195,7 @@ namespace MenschAergereDichNicht
                     {
                         getAktFigures()[selectedFigure].relPos = 0;
                         aktZug.zugstatus = Zugstatus.ersterWurf;
+                        nextPlayer();
                     }
                     else
                     {
@@ -233,26 +253,7 @@ namespace MenschAergereDichNicht
                     }
                 }
             }
-            /*
-            if (aktZug.zugstatus == Zugstatus.ziehen)
-            {
-                if (diceNumber == -1)
-                {
-                    return;
-                }
-
-                int currentPos = fieldPositions.GetPos(figure.Margin);
-                if (currentPos == -1)
-                {
-
-                }
-
-                int newPos = fieldPositions.incrementPosition(currentPos, 5);
-                Pos newCoord = fieldPositions.GetCoord(newPos);
-                figure.Margin = new Thickness(newCoord.xPos, newCoord.yPos, 0, 0);
-            }
-            */
-            
+            aktSpielerLabel.Content = Spieler[aktZug.spieler].Name + aktZug.zugstatus;
         }
     }
 }
