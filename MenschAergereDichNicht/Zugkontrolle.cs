@@ -24,7 +24,26 @@ namespace MenschAergereDichNicht
 
         public void checkWurf(Spielzug aktZug, int diceRoll)
         {
-            
+            /*
+             * if(geworfen==6 && Min 1 im Haus && keiner vor haus){
+             *      zugstatus = rausziehen;
+             * }else if(einer vor haus && keiner auf vor haus+geworfen) {
+             *      nur vor haus ziehen zulaessig;
+             *      (zugstatus = vorHausWegziehen);
+             * }else if(imHaus+anEndstation == 4){
+             *      if(zugstatus == hausVoll3){
+             *          zugstatus = naechsterSpieler;
+             *      }else{
+             *          zugstatus++;
+             *      }
+             * }else if(keinerKannGehen){
+             *      zugstatus = naechsterSpieler;
+             * }else{
+             *      zugstatus = ziehen;
+             *      (danach if zahl = 6{zugstatus = erster wurf})
+             * }
+             * 
+             */
         }
 
     }
