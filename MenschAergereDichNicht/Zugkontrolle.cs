@@ -18,7 +18,7 @@ namespace MenschAergereDichNicht
             if(diceRoll == 6 && home.numberInHouse(figures) > 0 && !playField.checkSameColPos(figures, 0))
             {
                 aktZug.zugstatus = Zugstatus.rausgehen;
-            }else if(playField.checkSameColPos(figures, 0) && !playField.checkSameColPos(figures, 0+diceRoll))
+            }else if(playField.checkSameColPos(figures, 0) && !playField.checkSameColPos(figures, 0+diceRoll) && home.numberInHouse(figures)>0)
             {
                 aktZug.zugstatus = Zugstatus.vorHausWegziehen;
             }else if (home.numberInHouse(figures)+playField.anzFigurenInEndpos(figures) == 4)
